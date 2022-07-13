@@ -1,17 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Container} from "../../DefaultStyles.ts"
 import { PostContentText, PostContent, PostContentMain, Title, TitleMain, Paragraph, Image } from "./PostStyles.ts";
 import Patrick from "../../images/posts/patrick.png"
+import {ThemeContext} from './../../context.ts'
 
 const Post = () => {
+
+    const {themeState, setThemeState} = useContext(ThemeContext)
+
     return <>
         <Container className="container">
             <PostContent className="feed__content">
                 <PostContentMain className="feed__content__main"> 
-                        <TitleMain className="title_main">  
+                        <TitleMain theme={themeState} className="title_main">  
                             What is Lorem Ipsum
                         </TitleMain>
-                        <Paragraph className="simple__text">  
+                        <Paragraph theme={themeState} className="simple__text">  
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                             when an unknown printer took a galley of type and scrambled it to make a type 
@@ -26,10 +30,10 @@ const Post = () => {
                         </Image>  
                 </PostContentMain>
                 <PostContentText className="feed__content__text">
-                    <Title className="title"> 
+                    <Title theme={themeState} className="title"> 
                         So what exactly happened?
                     </Title>
-                    <Paragraph className="simple__text"> 
+                    <Paragraph theme={themeState} className="simple__text"> 
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                             when an unknown printer took a galley of type and scrambled it to make a type 
@@ -40,11 +44,11 @@ const Post = () => {
                             including versions of Lorem Ipsum.
                     </Paragraph>
                 </PostContentText>
-                <PostContentText className="feed__content__text">
-                    <Title className="title">
+                <PostContentText theme={themeState} className="feed__content__text">
+                    <Title theme={themeState} className="title">
                         So what exactly happened?
                     </Title>
-                    <Paragraph className="simple__text">
+                    <Paragraph  theme={themeState}className="simple__text">
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
                         in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
                         Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up 
@@ -57,10 +61,10 @@ const Post = () => {
                     </Paragraph>
                 </PostContentText>
                 <PostContentText className="feed__content__text">
-                    <Title className="title">
+                    <Title  theme={themeState} className="title">
                         Its all ???
                     </Title>
-                    <Paragraph className="simple__text">
+                    <Paragraph theme={themeState} className="simple__text">
                         specimen book. It has survived not only five centuries, but also the leap into 
                         electronic typesetting, remaining essentially unchanged. It was popularised in 
                         the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 

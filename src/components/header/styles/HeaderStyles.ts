@@ -58,11 +58,11 @@ export const Navigation = styled.ul`
             padding: 70px 30px;
             left: 0;
             top: 0;
-            background-color: #eeeeee;
+            background-color: ${(props) => props.theme == 'sun'?'#eeeeee':"#161616"};
             display: block;
     
             .navigation__link {
-                color: #161616;
+                color: ${(props) => props.theme == 'sun'?'#161616':"#eeeeee"};
                 line-height: 35px;    
             }
         }
@@ -101,7 +101,6 @@ export const Burger = styled.div`
     margin: 8px 0;
     position: relative;
     z-index: 20;
-    transition: all 0.2s ease;
 
     &::after,
     &::before {
@@ -127,8 +126,7 @@ export const Burger = styled.div`
         position: absolute; 
         top: 20px; 
         right: 10px;
-        background-color: trasparent;
-        transition: all 0.2s ease;
+        background-color: ${(props) => props.theme == 'sun'?'#eeeeee':"#161616"};
 
         &::before,
         &::after {

@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import {ThemeContext} from '../context.ts'
 
-const About = ({theme}) => {
+const About = () => {
+
+    const {themeState} = useContext(ThemeContext)
 
     return <>
-        <p style={{color: `${theme == 'sun'?'#161616':'#eeeeee'}`}}>
+        <p style={{color: `${themeState == 'sun'?'#161616':'#eeeeee'}`}}>
             What is Lorem Ipsum?
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 

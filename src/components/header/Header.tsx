@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Header, HeaderInner } from "./styles/HeaderStyles.ts";
 import HeaderNavigation from "./components/HeaderNavigation.tsx";
 import ThemeChangeButton from "./components/ThemeChangeButton.tsx"
@@ -7,7 +7,7 @@ import {ThemeContext} from './../../context.ts'
 
 const SiteHeader = () => {
 
-    const {themeState, setThemeState} = useContext(ThemeContext)
+    const {themeState} = useContext(ThemeContext)
     
     return <>
         <Header className="header" id="header" theme={themeState}>

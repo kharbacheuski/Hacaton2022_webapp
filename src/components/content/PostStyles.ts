@@ -35,7 +35,7 @@ export const PostContentText = styled.div`
 `
 export const Title = styled.p`
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?'#161616':"#eeeeee"};
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
@@ -43,7 +43,7 @@ export const Title = styled.p`
 `
 export const TitleMain = styled.h1`
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?'#161616':"#eeeeee"};
     font-size: 35px;
     line-height: 50px;
     margin: 0 0 50px 0;
@@ -75,9 +75,14 @@ export const TitleMain = styled.h1`
 `
 export const Paragraph = styled.p`
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?'#161616':"#eeeeee"};
     font-weight: 400;
     margin: 0;
+
+    @media screen and (max-width: 991px) {
+        grid-column: 1 / 3;
+    }
+
 `
 export const ParagraphMain = styled.p`
     grid-column-start: 1;
@@ -85,7 +90,7 @@ export const ParagraphMain = styled.p`
     grid-row-start: 2;
     grid-row-end: 3;
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?'#161616':"#eeeeee"};
     margin: 0;
 
     @media screen and (max-width: 991px) {
