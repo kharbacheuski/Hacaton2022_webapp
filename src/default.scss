@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  font-family: Montserrat;
+  color: #eeeeee;
+  font-size: 15px;
+  line-height: 25px;
+
+}
+
+#page {
+  background-color: #161616;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &[theme="sun"] {
+    background-color: #eeeeee;
+  }
+}
