@@ -157,3 +157,11 @@ export const Burger = styled.div`
         }
     }
 `
+export const Logo = styled.a`
+    padding: .1rem .5rem;
+    text-decoration: none;
+    border: 2px solid ${(props) => props.theme == "sun"?darkColor:whiteColor};
+    color: ${(props) => props.theme == "sun"?darkColor:whiteColor};
+    font-weight: 700;
+    font-size: 18px;
+`

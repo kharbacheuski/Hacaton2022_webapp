@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Header, HeaderInner } from "./styles/HeaderStyles.ts";
+import { Header, HeaderInner, Logo } from "./styles/HeaderStyles.ts";
 import HeaderNavigation from "./components/HeaderNavigation.tsx";
 import ThemeChangeButton from "./components/ThemeChangeButton.tsx"
 import "./scripts/HeaderScripts.ts"
@@ -13,7 +13,7 @@ const SiteHeader = () => {
     return <>
         <Header className="header" id="header" theme={themeState}>
             <HeaderInner className="header__inner">
-                <a className="logo" href="/" style={{width: "20px", height: "20px", border: `2px solid ${themeState == "sun"?darkColor:whiteColor}`}}></a>
+                <Logo theme={themeState} href="/" className="logo">Hust</Logo>
                 <HeaderNavigation />
                 <ThemeChangeButton />
             </HeaderInner>

@@ -10,6 +10,7 @@ const ThemeChangeButton = () => {
     useEffect(() => {
         const page = document.getElementById('page')
         page?.setAttribute('theme', themeState)
+        document.body.setAttribute('theme', themeState)
         localStorage.setItem("theme", themeState)
     }, [themeState])
 
