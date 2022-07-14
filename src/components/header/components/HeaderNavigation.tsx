@@ -17,9 +17,6 @@ const HeaderNavigation = () => {
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/about">About</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
-                <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/privacy">Privacy</Link>
-            </NavigationItem>
-            <NavigationItem theme={themeState}>
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/contact">Contact Us</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>

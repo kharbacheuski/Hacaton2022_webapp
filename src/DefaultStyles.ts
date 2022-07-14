@@ -1,7 +1,10 @@
 import styled from "styled-components"
 
+export const whiteColor = "#eeeeee"
+export const darkColor = "#161616"
+
 export const Container = styled.div`
-    margin: 0 auto;
+    margin: 5rem auto 8rem;
     max-width: 1100px;
 
     @media screen and (max-width: 1200px) {
