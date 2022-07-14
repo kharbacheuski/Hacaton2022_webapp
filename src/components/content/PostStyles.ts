@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { darkColor, whiteColor } from "../../DefaultStyles.ts"
+
 export const PostContent= styled.div`
     display: flex;
     flex-direction: column;
@@ -33,17 +35,9 @@ export const PostContentText = styled.div`
         margin-top: 40px;
     }
 `
-export const Title = styled.p`
-    font-family: Verdana;
-    color: #eeeeee;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
-    margin: 0 0 10px 0;
-`
 export const TitleMain = styled.h1`
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
     font-size: 35px;
     line-height: 50px;
     margin: 0 0 50px 0;
@@ -52,6 +46,7 @@ export const TitleMain = styled.h1`
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
+    transition: all 0.5s ease;
 
     @media screen and (max-width: 1024px) {
         font-size: 30px;
@@ -73,20 +68,15 @@ export const TitleMain = styled.h1`
         line-height: 30px;
     }
 `
-export const Paragraph = styled.p`
-    font-family: Verdana;
-    color: #eeeeee;
-    font-weight: 400;
-    margin: 0;
-`
 export const ParagraphMain = styled.p`
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
     font-family: Verdana;
-    color: #eeeeee;
+    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
     margin: 0;
+    transition: all 0.5s ease;
 
     @media screen and (max-width: 991px) {
         grid-column-start: 1;

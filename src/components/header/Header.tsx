@@ -1,18 +1,19 @@
-import React, { useEffect, useContext } from "react";
-import { Header, HeaderInner } from "./styles/HeaderStyles.ts";
+import React, { useContext } from "react";
+import { Header, HeaderInner, Logo } from "./styles/HeaderStyles.ts";
 import HeaderNavigation from "./components/HeaderNavigation.tsx";
 import ThemeChangeButton from "./components/ThemeChangeButton.tsx"
 import "./scripts/HeaderScripts.ts"
 import {ThemeContext} from './../../context.ts'
+import {darkColor, whiteColor} from "../../DefaultStyles.ts"
 
 const SiteHeader = () => {
 
-    const {themeState, setThemeState} = useContext(ThemeContext)
+    const {themeState} = useContext(ThemeContext)
     
     return <>
         <Header className="header" id="header" theme={themeState}>
             <HeaderInner className="header__inner">
-                <a className="logo" href="/" style={{width: "20px", height: "20px", border: `2px solid ${themeState == "sun"?'#161616':"#eeeeee"}`, justifySelf: "start"}}></a>
+                <Logo theme={themeState} href="/" className="logo">Hust</Logo>
                 <HeaderNavigation />
                 <ThemeChangeButton />
             </HeaderInner>

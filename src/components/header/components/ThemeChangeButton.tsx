@@ -10,14 +10,13 @@ const ThemeChangeButton = () => {
     useEffect(() => {
         const page = document.getElementById('page')
         page?.setAttribute('theme', themeState)
+        document.body.setAttribute('theme', themeState)
+        localStorage.setItem("theme", themeState)
     }, [themeState])
 
     return <>
-        <div className="themeIcon" style={{height: "35px"}} onClick={() => setThemeState(themeState == "sun"?"moon":"sun")}>
-            {themeState == "sun" 
-                ? <img width="30px" src={Moon} alt="" />
-                : <img width="30px" src={Sun} alt="" />
-            }
+        <div id="themeIcon" className="themeIcon" style={{height: "35px"}} onClick={() => setThemeState(themeState == "sun"?"moon":"sun")}>
+            <img width="30px" src={themeState == "sun"?Moon:Sun} alt="" />
         </div>
     </>
 }

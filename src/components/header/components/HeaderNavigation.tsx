@@ -4,20 +4,17 @@ import { Link } from "react-router-dom";
 import { OpenCloseHeader } from "../scripts/HeaderScripts.ts";
 import {ThemeContext} from './../../../context.ts'
 
-const HeaderNavigation = ({theme}) => {
+const HeaderNavigation = () => {
 
     const {themeState} = useContext(ThemeContext)
 
     return <>
-        <Navigation className="navigation" id="navigation">
+        <Navigation theme={themeState} className="navigation" id="navigation">
             <NavigationItem theme={themeState}>
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/">Home</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/about">About</Link>
-            </NavigationItem>
-            <NavigationItem theme={themeState}>
-                <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/privacy">Privacy</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/contact">Contact Us</Link>
