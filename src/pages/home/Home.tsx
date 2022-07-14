@@ -49,7 +49,7 @@ const Home = () => {
             expedita dolore incidunt minus exercitationem fugit!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatem quaerat impedit 
         </Paragraph>
-        <img src={Jump} style={{width: "50rem", margin: "2rem 0 0"}} alt="" />
+        <img src={Jump} style={{width: "50rem", maxWidth: "100%", margin: "2rem 0 0"}} alt="" />
         <br />
         <Paragraph theme={themeState}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatem quaerat impedit 

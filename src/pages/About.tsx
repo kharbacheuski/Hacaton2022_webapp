@@ -21,7 +21,7 @@ const About = () => {
             and more recently with desktop publishing software like Aldus PageMaker 
             including versions of Lorem Ipsum.
             <br /><br />
-            <img src={Flowers} style={{width: "50rem", height: "35rem", objectFit: "cover", margin: "3rem 0"}} alt="" />
+            <img src={Flowers} style={{width: "50rem", maxWidth: "100%", height: "35rem", objectFit: "cover", margin: "3rem 0"}} alt="" />
             <Title theme={themeState}>Why do we use it?</Title>
             It is a long established fact that a reader will be distracted by 
             the readable content of a page when looking at its layout. The point 
