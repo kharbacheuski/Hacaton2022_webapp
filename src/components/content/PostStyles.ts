@@ -35,15 +35,6 @@ export const PostContentText = styled.div`
         margin-top: 40px;
     }
 `
-export const Title = styled.p`
-    font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
-    margin: 0 0 10px 0;
-    transition: all 0.5s ease;
-`
 export const TitleMain = styled.h1`
     font-family: Verdana;
     color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
@@ -76,18 +67,6 @@ export const TitleMain = styled.h1`
         font-size: 20px;
         line-height: 30px;
     }
-`
-export const Paragraph = styled.p`
-    font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
-    font-weight: 400;
-    margin: 0;
-    transition: all 0.5s ease;
-
-    @media screen and (max-width: 991px) {
-        grid-column: 1 / 3;
-    }
-
 `
 export const ParagraphMain = styled.p`
     grid-column-start: 1;

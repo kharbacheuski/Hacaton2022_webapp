@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
-import {Container} from "../../DefaultStyles.ts"
-import { PostContentText, PostContent, PostContentMain, Title, TitleMain, Paragraph, Image } from "./PostStyles.ts";
+import {Container, Paragraph, Title} from "../../DefaultStyles.ts"
+import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "./PostStyles.ts";
 import Patrick from "../../images/posts/patrick.png"
 import {ThemeContext} from './../../context.ts'
 
 const Post = () => {
 
-    const {themeState, setThemeState} = useContext(ThemeContext)
+    const {themeState} = useContext(ThemeContext)
 
     return <>
         <Container className="container">

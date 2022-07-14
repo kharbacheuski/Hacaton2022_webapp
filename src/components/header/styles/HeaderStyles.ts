@@ -94,10 +94,10 @@ export const NavigationItem = styled.li`
         line-height: 25px;
         cursor: pointer;
         z-index: 2;
-        transition: all 0.5s ease;
-    
+        transition: all 0.15s ease;
+
         &:hover {
-            filter: contrast(1.5)
+            font-size: 21px;
         }
     }
 `
