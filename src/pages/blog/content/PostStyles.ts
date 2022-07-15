@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { darkColor, whiteColor } from "../../DefaultStyles.ts"
+import { darkColor, whiteColor } from "../../../DefaultStyles.ts"
 
 export const PostContent= styled.div`
     display: flex;

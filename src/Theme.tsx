@@ -4,12 +4,12 @@ import SiteHeader from './components/header/Header.tsx';
 import SiteFooter from './components/footer/Footer.tsx';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from './pages/home/Home.tsx';
-import Contact from './pages/Contact.tsx';
-import About from './pages/About.tsx';
-import Blog from './pages/Blog.tsx';
+import Contact from './pages/contact/Contact.tsx';
+import About from './pages/about/About.tsx';
+import Blog from './pages/blog/Blog.tsx';
 import { ThemeContext } from './context.ts';
 
-const Default = () => {
+const Theme = () => {
     
     let theme = localStorage.getItem("theme")
     const [themeState, setThemeState] = useState(theme?theme:"sun")
@@ -30,4 +30,4 @@ const Default = () => {
     </>
 }
 
-export default Default;
+export default Theme;

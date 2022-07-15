@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
-import {ThemeContext} from '../context.ts'
-import {Paragraph, Title} from "../DefaultStyles.ts"
-import Flowers from "../images/flowers.jpg"
-import Sky from "../images/sky.jpg"
-import { Container } from "../DefaultStyles.ts";
+import {ThemeContext} from '../../context.ts'
+import {Paragraph, Title, Container} from "../../DefaultStyles.ts"
+import Flowers from "../../images/flowers.jpg"
+import Sky from "../../images/sky.jpg"
 
 const About = () => {
 

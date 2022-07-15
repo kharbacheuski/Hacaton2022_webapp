@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import {Container, Paragraph, Title} from "../../DefaultStyles.ts"
+import {Container, Paragraph, Title} from "../../../DefaultStyles.ts"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "./PostStyles.ts";
-import Patrick from "../../images/posts/patrick.png"
-import {ThemeContext} from './../../context.ts'
+import Patrick from "../../../images/posts/patrick.png"
+import {ThemeContext} from './../../../context.ts'
 
 const Post = () => {
 

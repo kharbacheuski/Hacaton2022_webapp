@@ -1,1 +1,1 @@
-#theme-project
+#hust-theme
