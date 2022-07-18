@@ -24,6 +24,12 @@ export const PostContentMain = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     margin-top: 60px;
+
+    .simple__text {
+        @media screen and (max-width: 991px) {
+            grid-column: 1 / 3;
+        }
+    }
 `
 export const PostContentText = styled.div`
     margin-top: 60px;
@@ -92,9 +98,6 @@ export const Image = styled.div`
     grid-row-end: 3;
     margin-left: 50px;
 
-    @media screen and (max-width: 1200px) {
-        padding: 120px 0;
-    }
     @media screen and (max-width: 1024px) {
         padding: 0;
         margin-left: 30px;

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { darkColor, whiteColor } from "../../../DefaultStyles.ts"
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
     width: 100%;
     min-height: 90px;
     background-color: ${(props) => props.theme == "sun"?whiteColor:darkColor};
@@ -18,7 +18,6 @@ export const Footer = styled.div`
 `
 
 export const FooterInner = styled.div`
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -33,6 +32,9 @@ export const FooterInner = styled.div`
         flex-direction: column;
         row-gap: 20px;
     }
+    @media screen and (max-width: 576px) {
+        padding: 30px 0;
+    }
 `
 export const Navigation = styled.ul`
     list-style: none;
@@ -44,7 +46,9 @@ export const Navigation = styled.ul`
     min-width: 20rem;
 
     @media screen and (max-width: 576px) {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 1rem;
     }
 `
 export const NavigationItem = styled.li`
