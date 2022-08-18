@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "webpack serve --open --config webpack.config.js",
-    "build": "webpack"
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "file-loader": "^6.2.0",

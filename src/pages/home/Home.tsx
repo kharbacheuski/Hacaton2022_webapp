@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import {ThemeContext} from "../../context"
 import Stairs from "../../images/stairs.jpg"
 import Pont from "../../images/pont.jpg"
-import Jump from "../../images/jump.jpg"
 import { TitleBig, Container, Paragraph } from "../../DefaultStyles";
 
 const Home = () => {
@@ -49,7 +48,6 @@ const Home = () => {
             expedita dolore incidunt minus exercitationem fugit!
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatem quaerat impedit 
         </Paragraph>
-        <img src={Jump} style={{width: "50rem", maxWidth: "100%", margin: "2rem 0 0"}} alt="" />
         <br />
         <Paragraph theme={themeState}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatem quaerat impedit 
