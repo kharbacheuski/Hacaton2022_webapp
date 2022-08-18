@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.ts",
   output: {
-    path: path.resolve(__dirname, "../dist"),
+    path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
     publicPath: '/'
   },
@@ -17,7 +17,7 @@ module.exports = {
   devServer:{
     compress: true,
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, './public'),
     },
     port: 3005,
   },
