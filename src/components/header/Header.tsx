@@ -4,12 +4,9 @@ import HeaderNavigation from "./components/HeaderNavigation";
 import ThemeChangeButton from "./components/ThemeChangeButton"
 import "./scripts/HeaderScripts"
 import {ThemeContext} from './../../context'
-import {darkColor, whiteColor} from "../../DefaultStyles"
 
 const SiteHeader = () => {
-
     const {themeState} = useContext(ThemeContext)
-    
     return <>
         <Header className="header" id="header" theme={themeState}>
             <HeaderInner className="header__inner">

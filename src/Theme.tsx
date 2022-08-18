@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './default.scss';
 import SiteHeader from './components/header/Header';
 import SiteFooter from './components/footer/Footer';
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import Home from './pages/home/Home';
 import Contact from './pages/contact/Contact';
 import About from './pages/about/About';
@@ -15,7 +15,7 @@ const Theme = () => {
     const [themeState, setThemeState] = useState(theme?theme:"sun")
 
     return <>
-        <BrowserRouter>
+        <HashRouter>
             <ThemeContext.Provider value={{themeState, setThemeState}}>
                 <SiteHeader />
                     <Routes >
@@ -26,7 +26,7 @@ const Theme = () => {
                     </Routes>
                 <SiteFooter />
             </ThemeContext.Provider>
-        </BrowserRouter>
+        </HashRouter>
     </>
 }
 
