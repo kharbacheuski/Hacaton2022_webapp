@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import './default.scss';
-import SiteHeader from './components/header/Header.tsx';
-import SiteFooter from './components/footer/Footer.tsx';
+import SiteHeader from './components/header/Header';
+import SiteFooter from './components/footer/Footer';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Home from './pages/home/Home.tsx';
-import Contact from './pages/contact/Contact.tsx';
-import About from './pages/about/About.tsx';
-import Blog from './pages/blog/Blog.tsx';
-import { ThemeContext } from './context.ts';
+import Home from './pages/home/Home';
+import Contact from './pages/contact/Contact';
+import About from './pages/about/About';
+import Blog from './pages/blog/Blog';
+import { ThemeContext } from './context';
 
 const Theme = () => {
     

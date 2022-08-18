@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import {ThemeContext} from "../../context.ts"
+import {ThemeContext} from "../../context"
 import Stairs from "../../images/stairs.jpg"
 import Pont from "../../images/pont.jpg"
 import Jump from "../../images/jump.jpg"
-import { TitleBig, Container, Paragraph } from "../../DefaultStyles.ts";
+import { TitleBig, Container, Paragraph } from "../../DefaultStyles";
 
 const Home = () => {
 

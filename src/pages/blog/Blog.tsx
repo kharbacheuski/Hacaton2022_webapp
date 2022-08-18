@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "./content/Post.tsx";
+import Post from "./content/Post";
 
 
 const Blog = () => {

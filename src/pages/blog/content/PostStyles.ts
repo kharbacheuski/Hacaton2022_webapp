@@ -1,6 +1,5 @@
 import styled from "styled-components"
-
-import { darkColor, whiteColor } from "../../../DefaultStyles.ts"
+import { darkColor, whiteColor } from "../../../DefaultStyles"
 
 export const PostContent= styled.div`
     display: flex;
@@ -43,7 +42,7 @@ export const PostContentText = styled.div`
 `
 export const TitleMain = styled.h1`
     font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
+    color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
     font-size: 35px;
     line-height: 50px;
     margin: 0 0 50px 0;
@@ -80,7 +79,7 @@ export const ParagraphMain = styled.p`
     grid-row-start: 2;
     grid-row-end: 3;
     font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
+    color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
     margin: 0;
     transition: all 0.5s ease;
 

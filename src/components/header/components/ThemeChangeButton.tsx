@@ -1,7 +1,7 @@
 import React, {  useEffect, useContext} from "react";
 import Sun from "../../../images/header/sun.png"
 import Moon from "../../../images/header/moon.png"
-import {ThemeContext} from './../../../context.ts'
+import {ThemeContext} from './../../../context'
 
 const ThemeChangeButton = () => {
 
@@ -15,8 +15,8 @@ const ThemeChangeButton = () => {
     }, [themeState])
 
     return <>
-        <div id="themeIcon" className="themeIcon" style={{height: "35px"}} onClick={() => setThemeState(themeState == "sun"?"moon":"sun")}>
-            <img width="30px" src={themeState == "sun"?Moon:Sun} alt="" />
+        <div id="themeIcon" className="themeIcon" style={{height: "35px"}} onClick={() => setThemeState(themeState === "sun"?"moon":"sun")}>
+            <img width="30px" src={themeState === "sun"?Moon:Sun} alt="" />
         </div>
     </>
 }

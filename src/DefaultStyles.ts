@@ -26,14 +26,14 @@ export const Container = styled.div`
 `
 export const Paragraph = styled.p`
     font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
+    color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
     font-weight: 400;
     margin: 0;
     transition: all 0.5s ease;
 `
 export const Title = styled.p`
     font-family: Verdana;
-    color: ${(props) => props.theme== 'sun'?darkColor:whiteColor};
+    color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;

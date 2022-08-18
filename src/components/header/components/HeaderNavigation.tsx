@@ -1,8 +1,8 @@
 import React, { useContext} from "react";
-import { Navigation, NavigationItem, Burger, BurgerWrapper } from "../styles/HeaderStyles.ts";
+import { Navigation, NavigationItem, Burger, BurgerWrapper } from "../styles/HeaderStyles";
 import { Link } from "react-router-dom";
-import { OpenCloseHeader } from "../scripts/HeaderScripts.ts";
-import {ThemeContext} from './../../../context.ts'
+import { OpenCloseHeader } from "../scripts/HeaderScripts";
+import {ThemeContext} from './../../../context'
 
 const HeaderNavigation = () => {
 

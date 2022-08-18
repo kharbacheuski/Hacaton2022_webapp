@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Header, HeaderInner, Logo } from "./styles/HeaderStyles.ts";
-import HeaderNavigation from "./components/HeaderNavigation.tsx";
-import ThemeChangeButton from "./components/ThemeChangeButton.tsx"
-import "./scripts/HeaderScripts.ts"
-import {ThemeContext} from './../../context.ts'
-import {darkColor, whiteColor} from "../../DefaultStyles.ts"
+import { Header, HeaderInner, Logo } from "./styles/HeaderStyles";
+import HeaderNavigation from "./components/HeaderNavigation";
+import ThemeChangeButton from "./components/ThemeChangeButton"
+import "./scripts/HeaderScripts"
+import {ThemeContext} from './../../context'
+import {darkColor, whiteColor} from "../../DefaultStyles"
 
 const SiteHeader = () => {
 

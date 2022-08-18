@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import { Navigation, NavigationItem } from "../styles/FooterStyles.ts";
+import { Navigation, NavigationItem } from "../styles/FooterStyles";
 import { Link } from "react-router-dom";
-import {ThemeContext} from './../../../context.ts'
+import {ThemeContext} from './../../../context'
 
 const FooterNavigation = () => {
 

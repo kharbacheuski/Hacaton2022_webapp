@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
-import { Footer, FooterInner, SocialLogos } from "./styles/FooterStyles.ts";
+import { Footer, FooterInner, SocialLogos } from "./styles/FooterStyles";
 import VKLogo from "../../images/footer/vk.svg";
 import TGLogo from "../../images/footer/tg.svg";
 import INLogo from "../../images/footer/in.svg";
-import FooterNavigation from "./components/FooterNavigation.tsx";
-import {Paragraph} from "../../DefaultStyles.ts"
-import {ThemeContext} from "../../context.ts"
+import FooterNavigation from "./components/FooterNavigation";
+import {Paragraph} from "../../DefaultStyles"
+import {ThemeContext} from "../../context"
 
 const SiteFooter = () => {
 
