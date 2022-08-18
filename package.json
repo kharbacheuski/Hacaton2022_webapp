@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack serve --open --config webpack.dev.js",
+    "start": "webpack serve --open --config webpack.config.js",
     "build": "webpack"
   },
   "devDependencies": {
