@@ -10,7 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     @font-face {
       font-family: BreeSerif;
       src: url('./BreeSerif-Regular.ttf'), url('./Helvetica-Regular.otf') format("truetype");
-      font-weight: normal;
       font-style: normal;
     }
   }
@@ -38,6 +37,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: consolas;
     font-size: ${pFontSize};
     line-height: ${pLineHeight};
+    font-weight: 600;
     background-color: #f0dede;
     width: 100%;
     transition: background-color 0.5s ease;

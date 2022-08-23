@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import Post from "./posts/CassettePost";
-import { Container, Paragraph } from "../../style/General";
+import { Paragraph } from "../../style/General";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { PostPreview, Description, PreviewImage } from "./BlogStyles";
+import { Navigation } from 'swiper';
+import { PostPreview, Description, SwiperStyles } from "./BlogStyles";
 import 'swiper/css';
+import 'swiper/css/navigation';
 import { Link } from "react-router-dom";
 import Dog from "../../images/posts/dog.jpg"
 import Duck from "../../images/posts/duck.jpg"
@@ -13,20 +14,30 @@ import { ThemeContext } from "../../context";
 
 const Blog = () => {
 
-    const {themeState} = useContext(ThemeContext)
-    return <>
+  const {themeState} = useContext(ThemeContext)
+
+  return <>
+    <SwiperStyles theme={themeState}/>
     <Swiper
-      spaceBetween={80}
-      style={{margin: "5rem 2rem 5rem 1rem"}}
+      speed={400}
+      modules={[Navigation]}
+      grabCursor={true}
+      height={600}
+      spaceBetween={100}
+      direction={"horizontal"}
+      style={{margin: "5rem 1rem", padding: "0 0 4.5rem 0"}}
+      navigation
       breakpoints={{
         991: {
           slidesPerView: 3,
-          direction: "horizontal",
+          spaceBetween: 100
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 50
         },
         300: {
-          slidesPerView: 2,
-          direction: 'vertical',
-          height: 600
+          slidesPerView: 1,
         }
       }}
     >
@@ -74,7 +85,7 @@ const Blog = () => {
         </Link>
       </SwiperSlide>
     </Swiper>
-    </>
+  </>
 }
 
 export default Blog

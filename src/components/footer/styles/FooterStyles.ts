@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { darkColor, whiteColor } from "../../../style/Constants"
+import { bloodColor, darkColor, whiteColor } from "../../../style/Constants"
 
 export const Footer = styled.footer`
     width: 100%;
@@ -62,15 +62,14 @@ export const NavigationItem = styled.li`
         font-family: "Tahoma";
         text-decoration: none;
         color: ${(props) => props.theme === "sun"?darkColor:whiteColor };
-        font-weight: 500;
         font-size: 18px;
         line-height: 25px;
         cursor: pointer;
         z-index: 2;
-        transition: all 0.3s easy-in-out;
+        transition: all 0.3s;
 
         &:hover {
-            color: rgb(222 66 66);
+            color: ${bloodColor};
             display: block;
             transform: scale(1.1);
         }
@@ -84,5 +83,21 @@ export const SocialLogos = styled.div`
 
     a {
         height: 35px;
+        transition: all .2s; 
+
+        &:hover {
+            transform: scale(1.2)
+        }
+        #tg circle {
+            fill: ${(props) => props.theme === "sun"?"transparent":whiteColor};
+        }
+        #in path:nth-of-type(1) {
+            fill: ${(props) => props.theme === "sun"?"transparent":whiteColor};
+        }
+        #vk {
+            background-color: ${(props) => props.theme === "sun"?"transparent":whiteColor};
+            border-radius: 50%;
+        }
+
     }
 `

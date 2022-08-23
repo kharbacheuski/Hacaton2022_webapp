@@ -1,4 +1,5 @@
 export const whiteColor = "#eeeeee";
+export const bloodColor = "rgb(177, 69, 69)"
 export const darkColor = "#161616";
 export const backgroundPink = "#f0dede"
 export const pFontSize = "15px";

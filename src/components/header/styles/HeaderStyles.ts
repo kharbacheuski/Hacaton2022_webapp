@@ -95,7 +95,6 @@ export const NavigationItem = styled.li`
     .navigation__link {
         text-decoration: none;
         color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
-        font-weight: 500;
         font-size: 18px;
         line-height: 25px;
         cursor: pointer;
@@ -166,6 +165,7 @@ export const Burger = styled.div`
     }
 `
 export const Logo = styled.a`
+    position: relative;
     padding: .1rem .5rem;
     text-decoration: none;
     border: 2px solid ${(props) => props.theme === "sun"?darkColor:whiteColor};
@@ -173,6 +173,25 @@ export const Logo = styled.a`
     font-weight: 700;
     font-size: 18px;
     transition: all .2s;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: .6rem;
+        height: .2rem;
+        bottom: -4px;
+        left: calc(50% - 0.3rem);
+        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: .6rem;
+        height: 5rem;
+        bottom: calc(100% + 2px);
+        left: calc(50% - 0.3rem);
+        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    }
 
     &:hover {
         display: block;

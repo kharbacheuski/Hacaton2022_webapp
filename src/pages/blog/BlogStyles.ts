@@ -1,16 +1,55 @@
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import { darkColor, whiteColor } from "../../style/Constants"
 
-export const PreviewImage = styled.div`
+
+export const SwiperStyles = createGlobalStyle`
+    .swiper-button-next, .swiper-button-prev {
+        right: 300px;
+        bottom: 0;
+        top: initial;
+        color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
+
+        @media screen and (max-width: 991px) {
+            right: 100px;
+        }
+        @media screen and (max-width: 576px) {
+            right: 20px;
+        }
+    }
+    .swiper-button-prev {
+        right: initial;
+        left: 300px;
+
+        @media screen and (max-width: 991px) {
+            left: 100px;
+        }
+        @media screen and (max-width: 576px) {
+            left: 20px;
+        }
+    }
+
 `
+
 export const Description = styled.div`
+    height: 8rem;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+
+    @media screen and (max-width: 991px) {
+        height: 5rem;
+    }
 `
 export const PostPreview = styled.div`
     height: 600px;
     border: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
 
     @media screen and (max-width: 991px) {
-        height: 300px;
+        height: 450px;
     }
 
     img {
@@ -20,21 +59,6 @@ export const PostPreview = styled.div`
 
         @media screen and (max-width: 991px) {
             height: calc(100% - 5rem);
-        }
-    }
-
-    ${Description} {
-        height: 8rem;
-        padding: 1rem 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-        border-bottom: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
-
-        @media screen and (max-width: 991px) {
-            height: 5rem;
         }
     }
 `
