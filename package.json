@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "webpack serve --open --config build/webpack.prod.js",
-    "build": "webpack --config buid/webpack.prod.js"
+    "build": "webpack --config build/webpack.prod.js"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
