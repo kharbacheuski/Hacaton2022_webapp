@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import styled from "styled-components"
-import { darkColor, whiteColor } from "../../../style/Constants"
+import { bloodColor, breakpointLG, breakpointXL, darkColor, whiteColor } from "../../../style/Constants"
 
 
 
@@ -30,17 +30,17 @@ export const HeaderInner = styled.div`
     align-items: center;
     background-color: transparent;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${breakpointLG}) {
         justify-content: end;
         padding: 0 10px;
     }
 
     .logo {
         margin-right: 50%;
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: ${breakpointXL}) {
             margin-right: 40%;
         }
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: ${breakpointLG}) {
             position: absolute;
             left: 1rem;
         }
@@ -55,7 +55,7 @@ export const HeaderInner = styled.div`
             
         }
 
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: ${breakpointLG}) {
             position: static;
         }
     }
@@ -69,7 +69,7 @@ export const Navigation = styled.ul`
     column-gap: 40px;
     transition: all 0.5s ease;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${breakpointLG}) {
         position: absolute;
         left: -100%;
         display: none;
@@ -95,14 +95,12 @@ export const NavigationItem = styled.li`
     .navigation__link {
         text-decoration: none;
         color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
-        font-size: 18px;
-        line-height: 25px;
         cursor: pointer;
         z-index: 2;
         transition: all .2s;
 
         &:hover {
-            color: rgb(222 66 66);
+            color: ${bloodColor};
             display: block;
             transform: scale(1.1);
         }
@@ -136,7 +134,7 @@ export const Burger = styled.div`
         bottom: 7px;
     }
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${breakpointLG}) {
         display: block;
         margin-right: 1rem;
     }
@@ -171,27 +169,26 @@ export const Logo = styled.a`
     border: 2px solid ${(props) => props.theme === "sun"?darkColor:whiteColor};
     color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
     font-weight: 700;
-    font-size: 18px;
     transition: all .2s;
 
-    &:before {
-        content: "";
-        position: absolute;
-        width: .6rem;
-        height: .2rem;
-        bottom: -4px;
-        left: calc(50% - 0.3rem);
-        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
-    }
-    &:after {
-        content: "";
-        position: absolute;
-        width: .6rem;
-        height: 5rem;
-        bottom: calc(100% + 2px);
-        left: calc(50% - 0.3rem);
-        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
-    }
+    // &:before {
+    //     content: "";
+    //     position: absolute;
+    //     width: .6rem;
+    //     height: .2rem;
+    //     bottom: -4px;
+    //     left: calc(50% - 0.3rem);
+    //     background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    // }
+    // &:after {
+    //     content: "";
+    //     position: absolute;
+    //     width: .6rem;
+    //     height: 5rem;
+    //     bottom: calc(100% + 2px);
+    //     left: calc(50% - 0.3rem);
+    //     background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    // }
 
     &:hover {
         display: block;

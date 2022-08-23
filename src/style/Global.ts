@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-import { darkColor, whiteColor, pFontSize, pLineHeight, breakpointXL, breakpointLG, breakpointMD, breakpointSM } from "./Constants"
+import { darkColor, whiteColor, pFontSize, pLineHeight, backgroundPink, backgroundBlack } from "./Constants"
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -38,12 +38,12 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${pFontSize};
     line-height: ${pLineHeight};
     font-weight: 600;
-    background-color: #f0dede;
+    background-color: ${backgroundPink};
     width: 100%;
     transition: background-color 0.5s ease;
     color: ${({theme}) => theme === "sun"?darkColor:whiteColor};
   }
   #page[theme="moon"] {
-    background-color: #141414;
+    background-color: ${backgroundBlack};
   }
 `

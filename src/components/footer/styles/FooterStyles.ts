@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { bloodColor, darkColor, whiteColor } from "../../../style/Constants"
+import { bloodColor, breakpointMD, breakpointSM, darkColor, whiteColor } from "../../../style/Constants"
 
 export const Footer = styled.footer`
     width: 100%;
@@ -11,7 +11,7 @@ export const Footer = styled.footer`
     align-items: center;
     border-top: 2px solid ${(props) => props.theme === "sun"?darkColor:whiteColor};
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${breakpointMD}) {
         flex-direction: column;
         align-items: center;
     }
@@ -28,11 +28,11 @@ export const FooterInner = styled.div`
     padding: 30px 30px;
     background-color: transparent;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${breakpointMD}) {
         flex-direction: column;
         row-gap: 20px;
     }
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: ${breakpointSM}) {
         padding: 30px 0;
     }
 `
@@ -45,7 +45,7 @@ export const Navigation = styled.ul`
     padding: 0;
     min-width: 20rem;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: ${breakpointSM}) {
         flex-direction: column;
         align-items: start;
         row-gap: 1rem;
@@ -62,8 +62,6 @@ export const NavigationItem = styled.li`
         font-family: "Tahoma";
         text-decoration: none;
         color: ${(props) => props.theme === "sun"?darkColor:whiteColor };
-        font-size: 18px;
-        line-height: 25px;
         cursor: pointer;
         z-index: 2;
         transition: all 0.3s;
