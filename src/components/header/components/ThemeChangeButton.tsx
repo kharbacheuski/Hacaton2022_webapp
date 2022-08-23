@@ -5,20 +5,21 @@ import {ThemeContext} from './../../../context'
 
 const ThemeChangeButton = () => {
 
+    const page = document.getElementById('page')
     const {themeState, setThemeState} = useContext(ThemeContext)
 
     useEffect(() => {
-        const page = document.getElementById('page')
         page?.setAttribute('theme', themeState)
         document.body.setAttribute('theme', themeState)
         localStorage.setItem("theme", themeState)
     }, [themeState])
 
-    return <>
-        <div id="themeIcon" className="themeIcon" style={{height: "35px"}} onClick={() => setThemeState(themeState === "sun"?"moon":"sun")}>
+    return (
+        <a id="themeIcon" className="themeIcon" style={{height: "35px", cursor: "pointer"}} onClick={() => setThemeState(themeState === "sun"?"moon":"sun")}>
             <img width="30px" src={themeState === "sun"?Moon:Sun} alt="" />
-        </div>
-    </>
+        </a>
+    )
+
 }
 
 export default ThemeChangeButton

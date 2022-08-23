@@ -8,10 +8,10 @@ const stickyHeaderHandler = () => {
 		if(headerElement !== null) {
 			let scrollingFromTop = document.documentElement.scrollTop;
 			let headerHeight = headerElement.offsetHeight;
-	
+			
 			headerElement.classList.toggle(
 				'fixed',
-				scrollingFromTop > headerHeight
+				scrollingFromTop > headerHeight*1.5
 			);
 		}
 	};

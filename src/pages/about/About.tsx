@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {ThemeContext} from '../../context'
-import {Paragraph, Title, Container} from "../../DefaultStyles"
+import {Paragraph, Title, Container} from "../../style/General"
 import Flowers from "../../images/flowers.jpg"
 import Sky from "../../images/sky.jpg"
 

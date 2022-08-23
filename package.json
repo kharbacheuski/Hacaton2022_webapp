@@ -14,13 +14,15 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack serve --open --config webpack.prod.js",
-    "build": "webpack --config webpack.prod.js"
+    "start": "webpack serve --open --config build/webpack.prod.js",
+    "build": "webpack --config buid/webpack.prod.js"
   },
   "devDependencies": {
+    "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",

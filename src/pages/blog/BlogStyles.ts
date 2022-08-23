@@ -1,5 +1,44 @@
 import styled from "styled-components"
-import { darkColor, whiteColor } from "../../../DefaultStyles"
+import { darkColor, whiteColor } from "../../style/Constants"
+
+export const PreviewImage = styled.div`
+`
+export const Description = styled.div`
+`
+export const PostPreview = styled.div`
+    height: 600px;
+    border: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+
+    @media screen and (max-width: 991px) {
+        height: 300px;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: calc(100% - 8rem);
+
+        @media screen and (max-width: 991px) {
+            height: calc(100% - 5rem);
+        }
+    }
+
+    ${Description} {
+        height: 8rem;
+        padding: 1rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border-bottom: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+
+        @media screen and (max-width: 991px) {
+            height: 5rem;
+        }
+    }
+`
+
 
 export const PostContent= styled.div`
     display: flex;

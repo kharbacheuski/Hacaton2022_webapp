@@ -7,7 +7,7 @@ import {ThemeContext} from './../../context'
 
 const SiteHeader = () => {
     const {themeState} = useContext(ThemeContext)
-    return <>
+    return (
         <Header className="header" id="header" theme={themeState}>
             <HeaderInner className="header__inner">
                 <Logo theme={themeState} href="/" className="logo">Hust</Logo>
@@ -15,7 +15,7 @@ const SiteHeader = () => {
                 <ThemeChangeButton />
             </HeaderInner>
         </Header>
-    </>
+    )
 }
 
 export default SiteHeader

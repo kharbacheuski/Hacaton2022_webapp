@@ -4,7 +4,7 @@ import VKLogo from "../../images/footer/vk.svg";
 import TGLogo from "../../images/footer/tg.svg";
 import INLogo from "../../images/footer/in.svg";
 import FooterNavigation from "./components/FooterNavigation";
-import {Paragraph} from "../../DefaultStyles"
+import {Paragraph} from "../../style/General"
 import {ThemeContext} from "../../context"
 
 const SiteFooter = () => {

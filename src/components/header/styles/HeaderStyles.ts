@@ -1,12 +1,16 @@
+import { useContext } from "react"
 import styled from "styled-components"
-import { darkColor, whiteColor } from "../../../DefaultStyles"
+import { darkColor, whiteColor } from "../../../style/Constants"
+
 
 
 export const Header = styled.header`
+    position: static;
     width: 100%;
     height: 70px;
-    background-color: transparent;
-
+    top: -70px;
+    transition: top .6s;
+    
     &.fixed {
         border-bottom: 2px solid ${(props) => props.theme === 'sun'?darkColor:whiteColor};
         position: fixed;
@@ -45,6 +49,12 @@ export const HeaderInner = styled.div`
         position: absolute;
         right: 1rem;
 
+        &:hover {
+            transition: all 10s;
+            transform: rotate(3turn);
+            
+        }
+
         @media screen and (max-width: 991px) {
             position: static;
         }
@@ -56,6 +66,7 @@ export const Navigation = styled.ul`
     flex-direction: row;
     margin: 0;
     padding: 0;
+    column-gap: 40px;
     transition: all 0.5s ease;
 
     @media screen and (max-width: 991px) {
@@ -81,11 +92,6 @@ export const Navigation = styled.ul`
     }
 `
 export const NavigationItem = styled.li`
-    margin-right: 40px;
-
-    &:last-of-type {
-        margin-right: 0;
-    }
     .navigation__link {
         text-decoration: none;
         color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
@@ -94,10 +100,12 @@ export const NavigationItem = styled.li`
         line-height: 25px;
         cursor: pointer;
         z-index: 2;
-        transition: all 0.15s ease;
+        transition: all .2s;
 
         &:hover {
-            font-size: 21px;
+            color: rgb(222 66 66);
+            display: block;
+            transform: scale(1.1);
         }
     }
 `
@@ -164,4 +172,11 @@ export const Logo = styled.a`
     color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
     font-weight: 700;
     font-size: 18px;
+    transition: all .2s;
+
+    &:hover {
+        display: block;
+        background-color: ${(props) => props.theme === "sun"?"rgb(222 66 66)":"transparent"};
+        transform: scale(1.05) rotate(0.02turn);
+    }
 `

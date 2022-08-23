@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { darkColor, whiteColor } from "../../../DefaultStyles"
+import { darkColor, whiteColor } from "../../../style/Constants"
 
 export const Footer = styled.footer`
     width: 100%;
@@ -70,7 +70,9 @@ export const NavigationItem = styled.li`
         transition: all 0.3s easy-in-out;
 
         &:hover {
-            filter: contrast(1.5)
+            color: rgb(222 66 66);
+            display: block;
+            transform: scale(1.1);
         }
     }
 `
@@ -79,9 +81,6 @@ export const SocialLogos = styled.div`
     flex-direction: row;
     align-items: center;
     column-gap: 25px;
-    background-color: ${(props) => props.theme === "sun"?"none":whiteColor};
-    padding: ${(props) => props.theme === "sun"?"none":".5rem 3rem .5rem 2.5rem"};
-    border-radius: ${(props) => props.theme === "sun"?"none":"1rem"};
 
     a {
         height: 35px;

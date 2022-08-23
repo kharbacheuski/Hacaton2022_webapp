@@ -16,9 +16,6 @@ const FooterNavigation = () => {
                 <Link className="navigation__link" to="/about">About</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
-                <Link className="navigation__link" to="/contact">Contact Us</Link>
-            </NavigationItem>
-            <NavigationItem theme={themeState}>
                 <Link className="navigation__link" to="/blog">Blog</Link>
             </NavigationItem>
         </Navigation>
