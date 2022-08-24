@@ -11,6 +11,7 @@ import DogPost from "./pages/blog/posts/DogPost"
 import BazaltPost from "./pages/blog/posts/BazaltPost"
 import CassettePost from "./pages/blog/posts/CassettePost"
 import DuckPost from "./pages/blog/posts/DuckPost"
+import LifePost from "./pages/blog/posts/LifePost"
 
 const Theme = () => {
     
@@ -30,6 +31,7 @@ const Theme = () => {
                         <Route path='/blog/bazalt' element={<BazaltPost />}></Route>
                         <Route path='/blog/cassette' element={<CassettePost />}></Route>
                         <Route path='/blog/donald-duck' element={<DuckPost />}></Route>
+                        <Route path='/blog/life' element={<LifePost />}></Route>
                     </Routes>
                 <SiteFooter />
             </ThemeContext.Provider>

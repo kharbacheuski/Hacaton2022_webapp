@@ -37,7 +37,7 @@ export const Description = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: ${({theme}) => theme === "moon"?"transparent":whiteColor};
     border-bottom: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
 
     @media screen and (max-width: ${breakpointLG}) {

@@ -1,8 +1,5 @@
-import { useContext } from "react"
 import styled from "styled-components"
 import { bloodColor, breakpointLG, breakpointXL, darkColor, whiteColor } from "../../../style/Constants"
-
-
 
 export const Header = styled.header`
     position: static;
@@ -101,8 +98,11 @@ export const NavigationItem = styled.li`
 
         &:hover {
             color: ${bloodColor};
-            display: block;
-            transform: scale(1.1);
+
+            @media screen and (min-width: ${breakpointLG}) {
+                display: block;
+                transform: scale(1.1);
+            }
         }
     }
 `

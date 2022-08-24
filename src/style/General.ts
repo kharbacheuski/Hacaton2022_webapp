@@ -12,7 +12,7 @@ import {
 
 export const Paragraph = styled.p`
   margin: .5rem 0;
-  color: ${({theme}) => theme === "moon"?whiteColor:darkColor}
+  color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
 `
 export const Title = styled.h1`
   font-size: ${titleFontSize};

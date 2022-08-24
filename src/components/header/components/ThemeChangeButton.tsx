@@ -9,9 +9,11 @@ const ThemeChangeButton = () => {
     const {themeState, setThemeState} = useContext(ThemeContext)
 
     useEffect(() => {
-        page?.setAttribute('theme', themeState)
-        document.body.setAttribute('theme', themeState)
-        localStorage.setItem("theme", themeState)
+        (async () => {
+            page?.setAttribute('theme', themeState)
+            document.body.setAttribute('theme', themeState)
+            localStorage.setItem("theme", themeState)
+        })()
     }, [themeState])
 
     return (

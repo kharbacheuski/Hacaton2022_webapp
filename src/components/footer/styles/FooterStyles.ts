@@ -33,7 +33,7 @@ export const FooterInner = styled.div`
         row-gap: 20px;
     }
     @media screen and (max-width: ${breakpointSM}) {
-        padding: 30px 0;
+        padding: 30px 10px;
     }
 `
 export const Navigation = styled.ul`
@@ -46,9 +46,7 @@ export const Navigation = styled.ul`
     min-width: 20rem;
 
     @media screen and (max-width: ${breakpointSM}) {
-        flex-direction: column;
-        align-items: start;
-        row-gap: 1rem;
+        min-width: 0;
     }
 `
 export const NavigationItem = styled.li`

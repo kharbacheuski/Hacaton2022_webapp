@@ -10,6 +10,7 @@ import Dog from "../../images/posts/dog.jpg"
 import Duck from "../../images/posts/duck.jpg"
 import Baz from "../../images/posts/baz.jpg"
 import Cas from "../../images/posts/cas.jpg"
+import Mu from "../../images/posts/mu.jpg"
 import { ThemeContext } from "../../context";
 
 const Blog = () => {
@@ -59,6 +60,17 @@ const Blog = () => {
               <Paragraph theme={themeState} style={{fontSize: "30px"}}>About Stones</Paragraph>
             </Description>
             <img src={Baz} alt=""/>
+          </PostPreview>
+        </Link>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <Link style={{textDecoration: "none"}} to="/blog/life">
+          <PostPreview theme={themeState}>
+            <Description theme={themeState}>
+              <Paragraph theme={themeState} style={{fontSize: "30px"}}>Life & New-York</Paragraph>
+            </Description>
+            <img src={Mu} alt=""/>
           </PostPreview>
         </Link>
       </SwiperSlide>
