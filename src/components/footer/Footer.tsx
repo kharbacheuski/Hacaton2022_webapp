@@ -2,11 +2,11 @@ import React, {useContext} from "react";
 import { Footer, FooterInner, SocialLogos } from "./styles/FooterStyles";
 import FooterNavigation from "./components/FooterNavigation";
 import {Paragraph} from "../../style/General"
-import {ThemeContext} from "../../context"
+import {AppContext} from "../../context"
 
 const SiteFooter = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <>
         <Footer theme={themeState} className="footer" id="footer">

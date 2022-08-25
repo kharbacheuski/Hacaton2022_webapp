@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
-import {ThemeContext} from '../../context'
+import {AppContext} from '../../context'
 import {Paragraph, Title, Container} from "../../style/General"
 import Flowers from "../../images/about/flowers.jpg"
 import Sky from "../../images/about/sky.jpg"
 
 const About = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <Container>
         <Paragraph theme={themeState}>

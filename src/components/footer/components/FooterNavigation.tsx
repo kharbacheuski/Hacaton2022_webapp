@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
 import { Navigation, NavigationItem } from "../styles/FooterStyles";
 import { Link } from "react-router-dom";
-import {ThemeContext} from './../../../context'
+import {AppContext} from './../../../context'
 
 const FooterNavigation = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <>
         <Navigation theme={themeState} className="navigation" id="navigation">

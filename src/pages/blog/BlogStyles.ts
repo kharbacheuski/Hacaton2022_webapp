@@ -1,5 +1,16 @@
 import styled, { createGlobalStyle } from "styled-components"
-import { breakpointSM, darkColor, whiteColor, breakpointLG, breakpointMD, breakpointXL, titleFontSize, titleLineHeight, pFontSize, pLineHeight } from "../../style/Constants"
+import { 
+    breakpointSM, 
+    darkColor, 
+    whiteColor, 
+    breakpointLG, 
+    breakpointMD, 
+    breakpointXL, 
+    titleFontSize, 
+    titleLineHeight, 
+    pFontSize, 
+    pLineHeight 
+} from "../../style/Constants"
 
 
 export const SwiperStyles = createGlobalStyle`

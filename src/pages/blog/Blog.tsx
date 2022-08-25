@@ -11,11 +11,11 @@ import Duck from "../../images/posts/duck.jpg"
 import Baz from "../../images/posts/baz.jpg"
 import Cas from "../../images/posts/cas.jpg"
 import Mu from "../../images/posts/mu.jpg"
-import { ThemeContext } from "../../context";
+import { AppContext } from "../../context";
 
 const Blog = () => {
 
-  const {themeState} = useContext(ThemeContext)
+  const {appStates: {themeState}} = useContext(AppContext)
 
   return <>
     <SwiperStyles theme={themeState}/>
@@ -28,6 +28,7 @@ const Blog = () => {
       direction={"horizontal"}
       style={{margin: "5rem 1rem", padding: "0 0 4.5rem 0"}}
       navigation
+      loop={true}
       breakpoints={{
         991: {
           slidesPerView: 3,

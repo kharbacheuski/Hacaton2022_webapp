@@ -2,11 +2,12 @@ import React, {useContext} from "react";
 import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Cas from "../../../images/posts/cas.jpg"
-import {ThemeContext} from '../../../context'
+import {AppContext} from '../../../context'
+import Player from "../../../components/player-widget/Player";
 
 const Post = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <>
         <Container className="container">
@@ -29,6 +30,7 @@ const Post = () => {
                         <img src={Cas} alt="" style={{height: "400px"}} />
                     </Image>  
                 </PostContentMain>
+                <Player isWidget={false}/>
                 <PostContentText className="feed__content__text">
                     <Title theme={themeState} className="title"> 
                         So what exactly happened?

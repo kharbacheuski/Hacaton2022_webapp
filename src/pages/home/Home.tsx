@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
-import {ThemeContext} from "../../context"
+import {AppContext} from "../../context"
 import Heaven from "../../images/home/heaven.jpg"
 import Heaven2 from "../../images/home/heaven-2.jpg"
 import {Paragraph, Title, Container} from "../../style/General"
 
 const Home = () => {
     
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
     
     return <Container>
         <Title theme={themeState}>Just website with images and "lorem" text</Title>

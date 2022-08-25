@@ -2,11 +2,11 @@ import React, {useContext} from "react";
 import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Duck from "../../../images/posts/duck.jpg"
-import {ThemeContext} from '../../../context'
+import {AppContext} from '../../../context'
 
 const Post = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <>
         <Container className="container">

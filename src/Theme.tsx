@@ -5,23 +5,30 @@ import { Route, Routes, HashRouter } from "react-router-dom";
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Blog from './pages/blog/Blog';
-import { ThemeContext } from './context';
+import { AppContext } from './context';
 import { GlobalStyles } from './style/Global';
 import DogPost from "./pages/blog/posts/DogPost"
 import BazaltPost from "./pages/blog/posts/BazaltPost"
 import CassettePost from "./pages/blog/posts/CassettePost"
 import DuckPost from "./pages/blog/posts/DuckPost"
 import LifePost from "./pages/blog/posts/LifePost"
+import { AppContextType } from './types';
+import Player from './components/player-widget/Player';
 
 const Theme = () => {
     
     let theme = localStorage.getItem("theme")
-    const [themeState, setThemeState] = useState(theme?theme:"sun")
+
+    const [appStates, setAppStates] = useState<AppContextType>({
+        themeState: theme?theme:"sun",
+        musicState: false
+    })
 
     return <>
         <GlobalStyles />
         <HashRouter>
-            <ThemeContext.Provider value={{themeState, setThemeState}}>
+            <AppContext.Provider value={{appStates, setAppStates}}>
+                <Player isWidget={true}/>
                 <SiteHeader />
                     <Routes >
                         <Route path='/' element={<Home />}></Route>
@@ -34,7 +41,7 @@ const Theme = () => {
                         <Route path='/blog/life' element={<LifePost />}></Route>
                     </Routes>
                 <SiteFooter />
-            </ThemeContext.Provider>
+            </AppContext.Provider>
         </HashRouter>
     </>
 }

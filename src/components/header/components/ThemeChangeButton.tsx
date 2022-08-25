@@ -1,24 +1,24 @@
 import React, {  useEffect, useContext} from "react";
 import Sun from "../../../images/header/sun.png"
 import Moon from "../../../images/header/moon.png"
-import {ThemeContext} from './../../../context'
+import {AppContext} from './../../../context'
 
 const ThemeChangeButton = () => {
 
     const page = document.getElementById('page')
-    const {themeState, setThemeState} = useContext(ThemeContext)
+    const {appStates, setAppStates} = useContext(AppContext)
 
     useEffect(() => {
         (async () => {
-            page?.setAttribute('theme', themeState)
-            document.body.setAttribute('theme', themeState)
-            localStorage.setItem("theme", themeState)
+            page?.setAttribute('theme', appStates.themeState)
+            document.body.setAttribute('theme', appStates.themeState)
+            localStorage.setItem("theme", appStates.themeState)
         })()
-    }, [themeState])
+    }, [appStates.themeState])
 
     return (
-        <a id="themeIcon" className="themeIcon" style={{height: "35px", cursor: "pointer"}} onClick={() => setThemeState(themeState === "sun"?"moon":"sun")}>
-            <img width="30px" src={themeState === "sun"?Moon:Sun} alt="" />
+        <a id="themeIcon" className="themeIcon" style={{height: "35px", cursor: "pointer"}} onClick={() => setAppStates({...appStates, themeState: appStates.themeState === "sun"?"moon":"sun"})}>
+            <img width="30px" src={appStates.themeState === "sun"?Moon:Sun} alt="" />
         </a>
     )
 

@@ -2,11 +2,11 @@ import React, { useContext} from "react";
 import { Navigation, NavigationItem, Burger, BurgerWrapper } from "../styles/HeaderStyles";
 import { Link } from "react-router-dom";
 import { OpenCloseHeader } from "../scripts/HeaderScripts";
-import {ThemeContext} from './../../../context'
+import {AppContext} from './../../../context'
 
 const HeaderNavigation = () => {
 
-    const {themeState} = useContext(ThemeContext)
+    const {appStates: {themeState}} = useContext(AppContext)
 
     return <>
         <Navigation theme={themeState} className="navigation" id="navigation">
