@@ -29,7 +29,7 @@ const Player = ({isWidget}) => {
                         ? <Play theme={appStates.themeState} /> 
                         : <Stop theme={appStates.themeState} />}
                 </div>
-                <Paragraph style={{position: "absolute", left: "4rem"}}>Grunge</Paragraph>
+                <Paragraph>Grunge</Paragraph>
             </WidgetPlayer>
         </>
         : <>

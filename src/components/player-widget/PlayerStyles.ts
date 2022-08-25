@@ -6,7 +6,8 @@ import {
     titleFontSize, 
     titleLineHeight, 
     pFontSize, 
-    pLineHeight 
+    pLineHeight, 
+    breakpointXXL,
 } from "../../style/Constants"
 
 export const PlayerButton = styled.div`
@@ -49,17 +50,19 @@ export const WidgetPlayer = styled(PlayerButton)`
         transform: scale(1.05);
     }
     p {
+        position: absolute;
+        left: 4rem;
         color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
+
+        @media screen and (max-width: ${breakpointXXL}) {
+            display: none;
+        }
     }
 
     @media screen and (max-width: ${breakpointSM}) {
         bottom: 1rem;
         right: 2rem;
         left: initial;
-
-        p {
-            display: none;
-        }
     }
 
 `
