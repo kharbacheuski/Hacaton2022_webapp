@@ -4,17 +4,7 @@ import Moon from "../../../images/header/moon.png"
 import {AppContext} from './../../../context'
 
 const ThemeChangeButton = () => {
-
-    const page = document.getElementById('page')
     const {appStates, setAppStates} = useContext(AppContext)
-
-    useEffect(() => {
-        (async () => {
-            page?.setAttribute('theme', appStates.themeState)
-            document.body.setAttribute('theme', appStates.themeState)
-            localStorage.setItem("theme", appStates.themeState)
-        })()
-    }, [appStates.themeState])
 
     return (
         <a id="themeIcon" className="themeIcon" style={{height: "35px", cursor: "pointer"}} onClick={() => setAppStates({...appStates, themeState: appStates.themeState === "sun"?"moon":"sun"})}>

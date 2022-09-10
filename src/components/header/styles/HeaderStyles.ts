@@ -171,24 +171,24 @@ export const Logo = styled.a`
     font-weight: 700;
     transition: all .2s;
 
-    // &:before {
-    //     content: "";
-    //     position: absolute;
-    //     width: .6rem;
-    //     height: .2rem;
-    //     bottom: -4px;
-    //     left: calc(50% - 0.3rem);
-    //     background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
-    // }
-    // &:after {
-    //     content: "";
-    //     position: absolute;
-    //     width: .6rem;
-    //     height: 5rem;
-    //     bottom: calc(100% + 2px);
-    //     left: calc(50% - 0.3rem);
-    //     background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
-    // }
+    &:before {
+        content: "";
+        position: absolute;
+        width: .6rem;
+        height: .4rem;
+        bottom: -7px;
+        left: calc(50% - 0.3rem);
+        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        width: .6rem;
+        height: 5rem;
+        bottom: calc(100% + 2px);
+        left: calc(50% - 0.3rem);
+        background-color: ${(props) => props.theme === "sun"?darkColor:whiteColor};
+    }
 
     &:hover {
         display: block;

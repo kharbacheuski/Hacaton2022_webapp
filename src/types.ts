@@ -1,6 +1,14 @@
 export type AppContextType = {
-    themeState: string;
-    musicState: boolean;
-    isAuth: boolean
+    appStates: {
+        themeState: string;
+        isAuth: boolean,
+    },
+    setAppStates: (appStates: Object) => Object 
+};
+export type LoadingContextType = {
+    loadingContext: {
+        loading: boolean
+    } 
+    setLoadingContext: (loadingContext: Object) => Object 
 };
   

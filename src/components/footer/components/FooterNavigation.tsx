@@ -13,7 +13,7 @@ const FooterNavigation = () => {
                 <Link className="navigation__link" to="/">Home</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
-                <Link className="navigation__link" to="/about">About</Link>
+                <Link className="navigation__link" to="/events">My Events</Link>
             </NavigationItem>
             <NavigationItem theme={themeState}>
                 <Link className="navigation__link" to="/blog">Blog</Link>

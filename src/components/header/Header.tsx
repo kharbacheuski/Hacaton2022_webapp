@@ -17,7 +17,7 @@ const SiteHeader = () => {
     return (
         <Header className="header" id="header" theme={themeState}>
             <HeaderInner className="header__inner">
-                <Logo theme={themeState} href="/" className="logo">Hust</Logo>
+                <Logo theme={themeState} href="/" className="logo">Casus Belli</Logo>
                 <HeaderNavigation />
                 <ThemeChangeButton />
             </HeaderInner>

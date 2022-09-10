@@ -1,1 +1,1 @@
-#hust-theme
+#casus-belli-chat-app

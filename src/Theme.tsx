@@ -1,50 +1,68 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SiteHeader from './components/header/Header';
 import SiteFooter from './components/footer/Footer';
 import { Route, Routes, HashRouter } from "react-router-dom";
 import Home from './pages/home/Home';
-import About from './pages/about/About';
 import Blog from './pages/blog/Blog';
 import Login from './pages/login/Login';
-import { AppContext } from './context';
+import Events from './pages/events/Events';
+import { AppContext, LoadingContext } from './context';
 import { GlobalStyles } from './style/Global';
 import DogPost from "./pages/blog/posts/DogPost"
 import BazaltPost from "./pages/blog/posts/BazaltPost"
 import CassettePost from "./pages/blog/posts/CassettePost"
 import DuckPost from "./pages/blog/posts/DuckPost"
 import LifePost from "./pages/blog/posts/LifePost"
-import FactsPost from "./pages/blog/posts/FactsPost"
-import Player from './components/player-widget/Player';
+import LoaderComponent from './components/loader/Loader';
 
 const Theme = () => {
+
     let theme = localStorage.getItem("theme")
     const [appStates, setAppStates] = useState({
         themeState: theme ? theme : "sun",
-        musicState: false,
-        isAuth: false
+        isAuth: false,
+    })
+    const [loadingContext, setLoadingContext] = useState({
+        loading: false
     })
 
+    const page = document.getElementById('page')
+    useEffect(() => {
+        (async () => {
+            page?.setAttribute('theme', appStates.themeState)
+            document.body.setAttribute('theme', appStates.themeState)
+            localStorage.setItem("theme", appStates.themeState)
+        })()
+    }, [appStates.themeState])
+
+    useEffect(() => {
+        console.log(appStates)
+    }, [appStates])
+
     return <>
+        {loadingContext.loading && <> <LoaderComponent /> {document.body.style.overflow = "hidden"}</>}
         <GlobalStyles />
         <HashRouter>
             <AppContext.Provider value={{appStates, setAppStates}}>
-                <Player isWidget={true}/>
-                <SiteHeader />
+                <LoadingContext.Provider value={{loadingContext, setLoadingContext}}>
                     {appStates.isAuth
-                        ? <Home />
+                        ? <>
+                            <SiteHeader />
+                                <Routes >
+                                    <Route path='/' element={<Home />} />
+                                    <Route path='/Events' element={<Events />} />
+                                    <Route path='/blog' element={<Blog />} />
+                                    <Route path='/blog/dog' element={<DogPost />} />
+                                    <Route path='/blog/bazalt' element={<BazaltPost />} />
+                                    <Route path='/blog/cassette' element={<CassettePost />} />
+                                    <Route path='/blog/donald-duck' element={<DuckPost />} />
+                                    <Route path='/blog/life' element={<LifePost />} />
+                                </Routes>
+                            <SiteFooter />
+                        </>
                         : <Login />
                     }
-                    <Routes >
-                        <Route path='/about' element={<About />} />
-                        <Route path='/blog' element={<Blog />} />
-                        <Route path='/blog/dog' element={<DogPost />} />
-                        <Route path='/blog/bazalt' element={<BazaltPost />} />
-                        <Route path='/blog/cassette' element={<CassettePost />} />
-                        <Route path='/blog/donald-duck' element={<DuckPost />} />
-                        <Route path='/blog/life' element={<LifePost />} />
-                        <Route path='/blog/facts' element={<FactsPost />} />
-                    </Routes>
-                <SiteFooter />
+                </LoadingContext.Provider>
             </AppContext.Provider>
         </HashRouter>
     </>

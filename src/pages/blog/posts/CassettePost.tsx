@@ -3,20 +3,20 @@ import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Cas from "../../../images/posts/cas.jpg"
 import {AppContext} from '../../../context'
-import Player from "../../../components/player-widget/Player";
+
 
 const Post = () => {
 
-    const {appStates: {themeState}} = useContext(AppContext)
+    const {appStates} = useContext(AppContext)
 
     return <>
         <Container className="container">
             <PostContent className="feed__content">
                 <PostContentMain className="feed__content__main"> 
-                    <TitleMain theme={themeState} className="title_main">  
+                    <TitleMain theme={appStates.themeState} className="title_main">  
                         What is Lorem Ipsum
                     </TitleMain>
-                    <Paragraph theme={themeState} className="simple__text">  
+                    <Paragraph theme={appStates.themeState} className="simple__text">  
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                         when an unknown printer took a galley of type and scrambled it to make a type 
@@ -30,12 +30,11 @@ const Post = () => {
                         <img src={Cas} alt="" style={{height: "400px"}} />
                     </Image>  
                 </PostContentMain>
-                <Player isWidget={false}/>
                 <PostContentText className="feed__content__text">
-                    <Title theme={themeState} className="title"> 
+                    <Title theme={appStates.themeState} className="title"> 
                         So what exactly happened?
                     </Title>
-                    <Paragraph theme={themeState} className="simple__text"> 
+                    <Paragraph theme={appStates.themeState} className="simple__text"> 
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                             when an unknown printer took a galley of type and scrambled it to make a type 
@@ -46,11 +45,11 @@ const Post = () => {
                             including versions of Lorem Ipsum.
                     </Paragraph>
                 </PostContentText>
-                <PostContentText theme={themeState} className="feed__content__text">
-                    <Title theme={themeState} className="title">
+                <PostContentText theme={appStates.themeState} className="feed__content__text">
+                    <Title theme={appStates.themeState} className="title">
                         So what exactly happened?
                     </Title>
-                    <Paragraph  theme={themeState}className="simple__text">
+                    <Paragraph  theme={appStates.themeState}className="simple__text">
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
                         in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
                         Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up 
@@ -63,10 +62,10 @@ const Post = () => {
                     </Paragraph>
                 </PostContentText>
                 <PostContentText className="feed__content__text">
-                    <Title  theme={themeState} className="title">
+                    <Title  theme={appStates.themeState} className="title">
                         Its all ???
                     </Title>
-                    <Paragraph theme={themeState} className="simple__text">
+                    <Paragraph theme={appStates.themeState} className="simple__text">
                         specimen book. It has survived not only five centuries, but also the leap into 
                         electronic typesetting, remaining essentially unchanged. It was popularised in 
                         the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 

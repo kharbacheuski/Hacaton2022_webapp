@@ -16,6 +16,7 @@ export const Paragraph = styled.p`
   margin: .5rem 0;
   color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
 `
+
 export const Title = styled.h1`
   font-size: ${titleFontSize};
   line-height: ${titleLineHeight};
@@ -58,4 +59,49 @@ export const Input = styled.input`
   line-height: ${pLineHeight};
   border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
   background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+`
+
+export const Button = styled.div`
+  border: none;
+  width: 10rem;
+  padding: 1rem 0;
+  background-color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => props.theme === 'sun'?whiteColor:darkColor};
+  font-size: ${pFontSize};
+  line-height: ${pLineHeight};
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 1rem 0;
+
+  &:active {
+      transform: scale(1.05);
+  }
+
+  @media screen and (max-width: ${breakpointSM}) {
+      width: 100%;
+  }
+`
+
+export const Loader = styled.div`
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  color: black;
+  font-size: ${titleFontSize};
+  opacity: 0.6;
+  background-color: ${(props) => props.theme === 'sun'?"#000":"#fff"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    p {
+      transition: all 7s;
+      transform: rotate(1turn);
+    }
+  }
 `

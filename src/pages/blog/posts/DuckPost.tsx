@@ -3,23 +3,10 @@ import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Duck from "../../../images/posts/duck.jpg"
 import {AppContext} from '../../../context'
-import { hustApi } from "../../../api/hustAPI";
 
 const Post = () => {
 
     const {appStates: {themeState}} = useContext(AppContext)
-
-    useEffect(() => {
-        (async () => {
-            try {
-                const {data} = await hustApi.getFacts(18, 'math');
-                console.log(data)
-            }
-            catch(error) {
-                console.log(error)
-            }
-        })()
-    }, [])
 
     return <>
         <Container className="container">
