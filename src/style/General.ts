@@ -7,7 +7,9 @@ import {
   breakpointMD, 
   breakpointSM,
   titleFontSize,
-  titleLineHeight
+  titleLineHeight,
+  pFontSize,
+  pLineHeight
 } from "./Constants"
 
 export const Paragraph = styled.p`
@@ -38,4 +40,22 @@ export const Container = styled.div`
     max-width: 100%;
     padding: 0 15px;
   }
+`
+
+export const Select = styled.select`
+  padding: 5px 15px;
+  color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  font-size: ${pFontSize};
+  line-height: ${pLineHeight};
+  border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+`
+
+export const Input = styled.input`
+  padding: 5px 15px;
+  color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  font-size: ${pFontSize};
+  line-height: ${pLineHeight};
+  border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
 `

@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		player.style.left = event.clientX - player.offsetWidth / 2 + 'px';
 		player.style.top = event.clientY - player.offsetHeight / 2 + 'px';
 	}
+	if (player !== null)
+		player.onmousedown = () => { 
+			document.onmousemove = onMouseMove;
 
-	player.onmousedown = (event) => { 
-		document.onmousemove = onMouseMove;
-
-		player.onmouseup = () => {
-			document.onmousemove = null;
-			player.onmousemove = null;
-		}
-	};
+			player.onmouseup = () => {
+				document.onmousemove = null;
+				player.onmousemove = null;
+			}
+		};
 })
 

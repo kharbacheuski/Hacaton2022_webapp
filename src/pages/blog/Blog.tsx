@@ -55,6 +55,17 @@ const Blog = () => {
       </SwiperSlide>
 
       <SwiperSlide>
+        <Link style={{textDecoration: "none"}} to="/blog/facts">
+          <PostPreview theme={themeState}>
+            <Description theme={themeState}>
+              <Paragraph theme={themeState} style={{fontSize: "30px"}}>Facts</Paragraph>
+            </Description>
+            <img src={Cas} alt=""/>
+          </PostPreview>
+        </Link>
+      </SwiperSlide>
+
+      <SwiperSlide>
         <Link style={{textDecoration: "none"}} to="/blog/bazalt">
           <PostPreview theme={themeState}>
             <Description theme={themeState}>
