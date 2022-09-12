@@ -20,7 +20,7 @@ const Theme = () => {
     let theme = localStorage.getItem("theme")
     const [appStates, setAppStates] = useState({
         themeState: theme ? theme : "sun",
-        isAuth: false,
+        isAuth: sessionStorage.getItem('isAuth') == "true" ? true : false,
     })
     const [loadingContext, setLoadingContext] = useState({
         loading: false
@@ -36,11 +36,13 @@ const Theme = () => {
     }, [appStates.themeState])
 
     useEffect(() => {
-        console.log(appStates)
-    }, [appStates])
+        loadingContext.loading 
+            ? document.body.style.overflowY = "hidden"
+            : document.body.style.overflowY = "auto"
+    }, [loadingContext.loading])
 
     return <>
-        {loadingContext.loading && <> <LoaderComponent /> {document.body.style.overflow = "hidden"}</>}
+        {loadingContext.loading && <LoaderComponent />}
         <GlobalStyles />
         <HashRouter>
             <AppContext.Provider value={{appStates, setAppStates}}>
