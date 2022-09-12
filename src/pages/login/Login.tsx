@@ -58,7 +58,10 @@ const Login = () => {
         </div>
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Send</Button>
         <div style={{position: "absolute", top: "1rem", right: "1rem"}}><ThemeChangeButton /></div>
-        <Paragraph theme={appStates.themeState}>Not registered? Register you phone number in our <a style={{textDecoration: "underlined", color: darkColor}} href="">Telegram Bot</a></Paragraph>
+        <Paragraph theme={appStates.themeState}>
+            Not registered? Register you phone number in our 
+            <a style={{textDecoration: "underlined", color: darkColor}} href="">Telegram Bot</a>
+        </Paragraph>
     </Container>
 
 }
