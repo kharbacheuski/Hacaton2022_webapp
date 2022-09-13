@@ -11,7 +11,7 @@ import Duck from "../../images/posts/duck.jpg"
 import Baz from "../../images/posts/baz.jpg"
 import Cas from "../../images/posts/cas.jpg"
 import Mu from "../../images/posts/mu.jpg"
-import { AppContext } from "../../context";
+import { AppContext } from "../../context/context";
 
 const Blog = () => {
 

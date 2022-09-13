@@ -33,6 +33,18 @@ export const GlobalStyles = createGlobalStyle`
       }
     }
   }
+
+input,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
+
   #page {
     font-family: consolas;
     font-size: ${pFontSize};
@@ -40,10 +52,20 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 600;
     background-color: ${backgroundPink};
     width: 100%;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.3s ease;
     color: ${({theme}) => theme === "sun"?darkColor:whiteColor};
   }
   #page[theme="moon"] {
     background-color: ${backgroundBlack};
+  }
+  .eye {
+    path {
+      fill: ${whiteColor};
+    }
+    &.sun {
+      path {
+        fill: ${darkColor};
+      }
+    }
   }
 `

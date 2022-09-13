@@ -1,6 +1,6 @@
 export const stickyHeaderHandler = () => {
 	let header = document.getElementById("header")
-	header.classList.toggle(
+	header?.classList.toggle(
 		'fixed',
 		document.documentElement.scrollTop > (header.offsetHeight * 1.5)
 	)

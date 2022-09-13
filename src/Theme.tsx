@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import SiteHeader from './components/header/Header';
 import SiteFooter from './components/footer/Footer';
 import { Route, Routes, HashRouter } from "react-router-dom";
-import Home from './pages/home/Home';
+import Home from './pages/Home';
 import Blog from './pages/blog/Blog';
-import Login from './pages/login/Login';
-import Events from './pages/events/Events';
-import { AppContext, LoadingContext } from './context';
+import Login from './pages/Login';
+import Events from './pages/Events';
+import { AppContext, LoadingContext } from './context/context';
 import { GlobalStyles } from './style/Global';
 import DogPost from "./pages/blog/posts/DogPost"
 import BazaltPost from "./pages/blog/posts/BazaltPost"
@@ -47,12 +47,12 @@ const Theme = () => {
         <HashRouter>
             <AppContext.Provider value={{appStates, setAppStates}}>
                 <LoadingContext.Provider value={{loadingContext, setLoadingContext}}>
-                    {appStates.isAuth
-                        ? <>
-                            <SiteHeader />
+                    {appStates.isAuth 
+                        ?   <>
+                                <SiteHeader />
                                 <Routes >
                                     <Route path='/' element={<Home />} />
-                                    <Route path='/Events' element={<Events />} />
+                                    <Route path='/events' element={<Events />} />
                                     <Route path='/blog' element={<Blog />} />
                                     <Route path='/blog/dog' element={<DogPost />} />
                                     <Route path='/blog/bazalt' element={<BazaltPost />} />
@@ -60,7 +60,7 @@ const Theme = () => {
                                     <Route path='/blog/donald-duck' element={<DuckPost />} />
                                     <Route path='/blog/life' element={<LifePost />} />
                                 </Routes>
-                            <SiteFooter />
+                                <SiteFooter />
                         </>
                         : <Login />
                     }

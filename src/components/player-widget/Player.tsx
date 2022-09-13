@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { AppContext } from "../../context";
+import { AppContext } from "../../context/context";
 import { Paragraph } from "../../style/General";
 import { Stop, Play, PlayerButton, WidgetPlayer } from "./PlayerStyles";
 import "./moveScript"

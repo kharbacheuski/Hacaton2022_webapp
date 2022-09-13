@@ -21,6 +21,7 @@ export const Title = styled.h1`
   font-size: ${titleFontSize};
   line-height: ${titleLineHeight};
   margin: 1rem 0;
+  text-align: center;
   color: ${({theme}) => theme === "moon"?whiteColor:darkColor}
 `
 export const Container = styled.div`
@@ -50,6 +51,7 @@ export const Select = styled.select`
   line-height: ${pLineHeight};
   border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
   background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+  transition: all .1s;
 `
 
 export const Input = styled.input`
@@ -59,11 +61,16 @@ export const Input = styled.input`
   line-height: ${pLineHeight};
   border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
   background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+  transition: all .1s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `
 
 export const Button = styled.div`
   border: none;
-  width: 10rem;
+  width: 15rem;
   padding: 1rem 0;
   background-color: ${(props) => props.theme === 'sun'?darkColor:whiteColor};
   display: flex;
@@ -74,14 +81,15 @@ export const Button = styled.div`
   line-height: ${pLineHeight};
   cursor: pointer;
   transition: all 0.3s;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem; 
+  border-radius: ${({theme}) => theme === "moon"?"50px":"none"};
 
-  &:active {
-      transform: scale(1.05);
+  &:hover {
+    transform: scale(1.05);
   }
 
   @media screen and (max-width: ${breakpointSM}) {
-      width: 100%;
+    width: 100%;
   }
 `
 

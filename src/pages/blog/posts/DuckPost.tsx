@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from "react";
 import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Duck from "../../../images/posts/duck.jpg"
-import {AppContext} from '../../../context'
+import {AppContext} from '../../../context/context'
 
 const Post = () => {
 

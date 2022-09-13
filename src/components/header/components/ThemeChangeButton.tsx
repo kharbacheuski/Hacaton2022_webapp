@@ -1,7 +1,7 @@
 import React, {  useEffect, useContext} from "react";
 import Sun from "../../../images/header/sun.png"
 import Moon from "../../../images/header/moon.png"
-import {AppContext} from './../../../context'
+import {AppContext} from '../../../context/context'
 
 const ThemeChangeButton = () => {
     const {appStates, setAppStates} = useContext(AppContext)

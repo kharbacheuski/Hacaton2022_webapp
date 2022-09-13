@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {Paragraph, Title, Container} from "../../../style/General"
 import { PostContentText, PostContent, PostContentMain, TitleMain, Image } from "../BlogStyles";
 import Mu from "../../../images/posts/mu.jpg"
-import {AppContext} from '../../../context'
+import {AppContext} from '../../../context/context'
 
 const Post = () => {
 
