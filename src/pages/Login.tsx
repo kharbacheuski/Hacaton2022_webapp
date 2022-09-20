@@ -15,12 +15,9 @@ const Login = () => {
 
     const authHandle = async () => {
         setAppStates({...appStates, loadingState: true})
-        try {
-            const login = (await chatApi.Login({
-                phoneNumber: phone
-            })).data;
-            console.log(login)
-            
+        try {   
+            const login = (await chatApi.Login({phoneNumber: phone})).data;
+
             setAppStates({
                 ...appStates, 
                 user: {
@@ -80,7 +77,7 @@ const Login = () => {
                     </svg>
                 </div>
             </div> */}
-            {isError && <Paragraph style={{color: bloodColor, textAlign: "center", marginTop: "1.5rem"}}>Номер или пароль введены неверно! Может быть вы не зарегистрированы</Paragraph>}
+            {isError && <Paragraph style={{color: bloodColor, textAlign: "center", marginTop: "1.5rem"}}>Номер или пароль введены неверно! А может быть вы не зарегистрированы</Paragraph>}
         </div>
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Отправить</Button>
         <div style={{position: "absolute", top: "1rem", right: "1rem"}}><ThemeChangeButton /></div>
