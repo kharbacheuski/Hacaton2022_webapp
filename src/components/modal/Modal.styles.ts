@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { bloodColor, darkColor, whiteColor, backgroundPink } from "../../style/Constants"
+import { bloodColor, darkColor, whiteColor, backgroundPink, breakpointSM } from "../../style/Constants"
 
 export const ModalBackground = styled.div`
     position: absolute;
@@ -27,6 +27,13 @@ export const ModalContentWrapper = styled.div`
     transition: all 0.3s;
     overflow: auto;
     padding: 2rem;
+
+    @media screen and (max-width: ${breakpointSM}) {
+        width: calc(100% - 4rem);
+        height: max-content;
+        top: calc(50% - 20rem);
+        left: 2rem;
+    }
 `
 export const ModalInner = styled.div`
     text-align: center;
