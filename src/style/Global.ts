@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
   html, body {
+    font-size: 10px;
     &::-webkit-scrollbar {
       width: 12px;
     }

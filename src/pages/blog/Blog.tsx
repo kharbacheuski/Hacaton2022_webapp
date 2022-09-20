@@ -18,7 +18,7 @@ const Blog = () => {
   const {appStates: {themeState}} = useContext(AppContext)
 
   return <>
-    <SwiperStyles theme={themeState}/>
+    {/* <SwiperStyles theme={themeState}/>
     <Swiper
       speed={400}
       modules={[Navigation]}
@@ -97,7 +97,7 @@ const Blog = () => {
           </PostPreview>
         </Link>
       </SwiperSlide>
-    </Swiper>
+    </Swiper> */}
   </>
 }
 

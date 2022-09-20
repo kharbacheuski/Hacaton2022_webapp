@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Blog from './pages/blog/Blog';
 import Login from './pages/Login';
 import Events from './pages/Events';
+import Report from './pages/Report'
 import { AppContext, LoadingContext } from './context/context';
 import { GlobalStyles } from './style/Global';
 import DogPost from "./pages/blog/posts/DogPost"
@@ -21,6 +22,9 @@ const Theme = () => {
     const [appStates, setAppStates] = useState({
         themeState: theme ? theme : "sun",
         isAuth: sessionStorage.getItem('isAuth') == "true" ? true : false,
+        phone: sessionStorage.getItem('phone'),
+        telegramID: sessionStorage.getItem('telegramId'),
+        roleCode: sessionStorage.getItem('roleCode')
     })
     const [loadingContext, setLoadingContext] = useState({
         loading: false
@@ -34,6 +38,10 @@ const Theme = () => {
             localStorage.setItem("theme", appStates.themeState)
         })()
     }, [appStates.themeState])
+
+    useEffect(() => {
+        console.log("states", appStates)
+    }, [appStates])
 
     useEffect(() => {
         loadingContext.loading 
@@ -59,6 +67,7 @@ const Theme = () => {
                                     <Route path='/blog/cassette' element={<CassettePost />} />
                                     <Route path='/blog/donald-duck' element={<DuckPost />} />
                                     <Route path='/blog/life' element={<LifePost />} />
+                                    <Route path='/report' element={<Report />} />
                                 </Routes>
                                 <SiteFooter />
                         </>

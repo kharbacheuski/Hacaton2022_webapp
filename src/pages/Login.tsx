@@ -1,7 +1,6 @@
 import React, {useContext, useState} from "react";
 import {AppContext, LoadingContext} from "../context/context"
 import {Paragraph, Title, Container, Input, Button } from "../style/General"
-import Eye from "../images/login/eye.svg"
 import ThemeChangeButton from "../components/header/components/ThemeChangeButton";
 import { chatApi } from "../api/api";
 import { AppContextType, LoadingContextType } from "../types/types";
@@ -18,11 +17,24 @@ const Login = () => {
     const authHandle = async () => {
         setLoadingContext({loading: true})
         try {
-            const login = await chatApi.Login({
-                phoneNumber: phone[0] == "+" ? phone : ( "+" + phone )
-            });
-            setAppStates({...appStates, isAuth: true}) 
+            const login = (await chatApi.Login({
+                phoneNumber: phone
+            })).data;
+            console.log(login)
+            
+            setAppStates({
+                ...appStates, 
+                isAuth: true, 
+                phone: phone, 
+                telegramID: login.telegramId, 
+                roleCode: login.roleCode
+            }) 
+
             sessionStorage.setItem('isAuth', "true")
+            sessionStorage.setItem('telegramId', login.telegramId)
+            sessionStorage.setItem('phone', phone)
+            sessionStorage.setItem('roleCode', login.roleCode)
+            
             setIsError(false)
         }
         catch(e) {
@@ -66,7 +78,7 @@ const Login = () => {
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Отправить</Button>
         <div style={{position: "absolute", top: "1rem", right: "1rem"}}><ThemeChangeButton /></div>
         <Paragraph theme={appStates.themeState} style={{ textAlign: "center"}}>
-            Не зарегистрированы? Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="">Телеграмм Боте</a>
+            Не зарегистрированы? Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="https://t.me/VTBPlutosBot">Телеграмм Боте</a>
         </Paragraph>
     </Container>
 

@@ -64,10 +64,39 @@ export const Input = styled.input`
   transition: all .1s;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `
+export const FileUploadLabel = styled.label`
+  padding: 5px 15px;
+  color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  font-size: ${pFontSize};
+  line-height: ${pLineHeight};
+  border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+  transition: all .1s;
+  width: max-content;
 
+  &:hover {
+    transform: scale(1.02);
+  }
+  input {
+    display: none;
+  }
+`
+export const TextArea = styled.textarea`
+  padding: 1rem;
+  color: ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  font-size: ${pFontSize};
+  line-height: ${pLineHeight};
+  border: 2px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
+  background-color: ${({theme}) => theme === "moon"?darkColor:whiteColor};
+  transition: all .1s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`
 export const Button = styled.div`
   border: none;
   width: 15rem;
@@ -112,4 +141,21 @@ export const Loader = styled.div`
       transform: rotate(1turn);
     }
   }
+`
+
+export const EventBlock = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: ${(props) => props.theme === 'sun'?whiteColor:"none"};
+  border: 3px solid ${(props) => props.theme === 'sun'?darkColor:whiteColor};
+`
+
+export const EventsContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  padding: 2rem 0;
 `

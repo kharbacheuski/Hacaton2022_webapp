@@ -19,6 +19,9 @@ const HeaderNavigation = () => {
             <NavigationItem theme={themeState}>
                 <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/blog">Блог</Link>
             </NavigationItem>
+            <NavigationItem theme={themeState}>
+                <Link onClick={(e) => OpenCloseHeader(e)} className="navigation__link" to="/report">Отчет</Link>
+            </NavigationItem>
         </Navigation>
         <BurgerWrapper id="burger__wrapper" theme={themeState} onClick={() => OpenCloseHeader()}>
             <Burger theme={themeState} id="burger"/>
