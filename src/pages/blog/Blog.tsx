@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Paragraph } from "../../style/General";
+import { Container, Paragraph } from "../../style/General";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import { PostPreview, Description, SwiperStyles } from "./BlogStyles";
@@ -12,12 +12,13 @@ import Baz from "../../images/posts/baz.jpg"
 import Cas from "../../images/posts/cas.jpg"
 import Mu from "../../images/posts/mu.jpg"
 import { AppContext } from "../../context/context";
+import { AppContextType } from "../../types/types";
 
 const Blog = () => {
 
-  const {appStates: {themeState}} = useContext(AppContext)
+  const {appStates} = useContext<AppContextType>(AppContext)
 
-  return <>
+  return <Container style={{minHeight: "100vh"}}>
     {/* <SwiperStyles theme={themeState}/>
     <Swiper
       speed={400}
@@ -98,7 +99,7 @@ const Blog = () => {
         </Link>
       </SwiperSlide>
     </Swiper> */}
-  </>
+  </Container>
 }
 
 export default Blog

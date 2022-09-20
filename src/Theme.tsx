@@ -7,7 +7,7 @@ import Blog from './pages/blog/Blog';
 import Login from './pages/Login';
 import Events from './pages/Events';
 import Report from './pages/Report'
-import { AppContext, LoadingContext } from './context/context';
+import { AppContext } from './context/context';
 import { GlobalStyles } from './style/Global';
 import DogPost from "./pages/blog/posts/DogPost"
 import BazaltPost from "./pages/blog/posts/BazaltPost"
@@ -17,20 +17,21 @@ import LifePost from "./pages/blog/posts/LifePost"
 import LoaderComponent from './components/loader/Loader';
 
 const Theme = () => {
-
     let theme = localStorage.getItem("theme")
+    const page = document.getElementById('page')
+
     const [appStates, setAppStates] = useState({
         themeState: theme ? theme : "sun",
-        isAuth: sessionStorage.getItem('isAuth') == "true" ? true : false,
-        phone: sessionStorage.getItem('phone'),
-        telegramID: sessionStorage.getItem('telegramId'),
-        roleCode: sessionStorage.getItem('roleCode')
-    })
-    const [loadingContext, setLoadingContext] = useState({
-        loading: false
+        user: {
+            isAuth: sessionStorage.getItem('isAuth') == "true" ? true : false,
+            phone: sessionStorage.getItem('phone'),
+            telegramID: sessionStorage.getItem('telegramId'),
+            roleCode: sessionStorage.getItem('roleCode')
+        },
+        modalState: false,
+        loadingState: false
     })
 
-    const page = document.getElementById('page')
     useEffect(() => {
         (async () => {
             page?.setAttribute('theme', appStates.themeState)
@@ -40,42 +41,37 @@ const Theme = () => {
     }, [appStates.themeState])
 
     useEffect(() => {
-        console.log("states", appStates)
-    }, [appStates])
-
-    useEffect(() => {
-        loadingContext.loading 
+        appStates.loadingState || appStates.modalState
             ? document.body.style.overflowY = "hidden"
             : document.body.style.overflowY = "auto"
-    }, [loadingContext.loading])
+    }, [appStates.loadingState, appStates.modalState])
 
     return <>
-        {loadingContext.loading && <LoaderComponent />}
+        {appStates.loadingState && <LoaderComponent />}
         <GlobalStyles />
         <HashRouter>
             <AppContext.Provider value={{appStates, setAppStates}}>
-                <LoadingContext.Provider value={{loadingContext, setLoadingContext}}>
-                    {appStates.isAuth 
-                        ?   <>
-                                <SiteHeader />
-                                <Routes >
-                                    <Route path='/' element={<Home />} />
-                                    <Route path='/events' element={<Events />} />
-                                    <Route path='/blog' element={<Blog />} />
-                                    <Route path='/blog/dog' element={<DogPost />} />
-                                    <Route path='/blog/bazalt' element={<BazaltPost />} />
-                                    <Route path='/blog/cassette' element={<CassettePost />} />
-                                    <Route path='/blog/donald-duck' element={<DuckPost />} />
-                                    <Route path='/blog/life' element={<LifePost />} />
-                                    <Route path='/report' element={<Report />} />
-                                </Routes>
-                                <SiteFooter />
-                        </>
-                        : <Login />
-                    }
-                </LoadingContext.Provider>
+                {appStates.user.isAuth 
+                    ?   <>
+                            <SiteHeader />
+                            <Routes >
+                                <Route path='/' element={<Home />} />
+                                <Route path='/events' element={<Events />} />
+                                <Route path='/blog' element={<Blog />} />
+                                <Route path='/blog/dog' element={<DogPost />} />
+                                <Route path='/blog/bazalt' element={<BazaltPost />} />
+                                <Route path='/blog/cassette' element={<CassettePost />} />
+                                <Route path='/blog/donald-duck' element={<DuckPost />} />
+                                <Route path='/blog/life' element={<LifePost />} />
+                                <Route path='/report' element={<Report />} />
+                            </Routes>
+                            <SiteFooter />
+                    </>
+                    : <Login />
+                }
             </AppContext.Provider>
         </HashRouter>
+
     </>
 }
 

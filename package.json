@@ -12,8 +12,8 @@
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0",
     "react-hook-form": "^7.12.2",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "webpack serve --open --config build/webpack.prod.js",
-    "build": "webpack --config build/webpack.prod.js"
+    "build": "webpack serve --config build/webpack.prod.js"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",

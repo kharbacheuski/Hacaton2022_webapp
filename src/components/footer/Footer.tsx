@@ -8,7 +8,7 @@ const SiteFooter = () => {
 
     const {appStates} = useContext(AppContext)
 
-    return appStates.isAuth && <>
+    return appStates.user.isAuth && <>
         <Footer theme={appStates.themeState} className="footer" id="footer">
             <FooterInner className="footer__inner">
                 <SocialLogos theme={appStates.themeState} className="social__logos" >

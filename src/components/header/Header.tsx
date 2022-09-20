@@ -14,7 +14,7 @@ const SiteHeader = () => {
         stickyHeaderHandler()
     }, [appStates.themeState])
 
-    return appStates.isAuth && (
+    return appStates.user.isAuth && (
         <Header className="header" id="header" theme={appStates.themeState}>
             <HeaderInner className="header__inner">
                 <Logo theme={appStates.themeState} href="/" className="logo">Agro</Logo>

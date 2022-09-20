@@ -1,29 +1,24 @@
-import React, { useContext} from "react";
-import { Paragraph } from "../../style/General";
+import React, { useContext } from "react";
+import { Button, Paragraph } from "../../style/General";
 import { AppContext } from "../../context/context";
-import { ModalContainer, ModalContent } from "./Modal.styles";
+import { ModalBackground, ModalContentWrapper, ModalInner } from "./Modal.styles";
+import { AppContextType } from "../../types/types";
+import { darkColor, whiteColor } from "../../style/Constants";
 
-const ModalEventStatus = ({isOk}) => {
+const ModalEventStatus = ({message}) => {
 
-    const {appStates} = useContext(AppContext)
+    const {appStates, setAppStates} = useContext<AppContextType>(AppContext)
 
-    return (
-        isOk
-        ? <>
-            <ModalContainer>
-                <ModalContent>
-                    <Paragraph theme={appStates.appStates}>Заявка принята!</Paragraph>
-                </ModalContent>
-            </ModalContainer>
-        </>
-        : <>
-            <ModalContainer>
-                <ModalContent>
-                    <Paragraph theme={appStates.appStates}>Ошибка!</Paragraph>
-                </ModalContent>
-            </ModalContainer>
-        </>
-    )
+    return <>
+        <ModalBackground theme={appStates.themeState} />
+        <ModalContentWrapper theme={appStates.themeState}>
+            <ModalInner theme={appStates.themeState}>
+            <div className="cross" onClick={() => setAppStates({...appStates, modalState: false})}></div>
+            {message}
+            <Button style={{backgroundColor: darkColor, color: whiteColor, borderRadius: "3rem"}} onClick={() => setAppStates({...appStates, modalState: false})}>Окей</Button>
+            </ModalInner>
+        </ModalContentWrapper>
+    </>
 }
     
 

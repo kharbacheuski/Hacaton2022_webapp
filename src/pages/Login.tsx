@@ -1,9 +1,9 @@
 import React, {useContext, useState} from "react";
-import {AppContext, LoadingContext} from "../context/context"
+import {AppContext} from "../context/context"
 import {Paragraph, Title, Container, Input, Button } from "../style/General"
 import ThemeChangeButton from "../components/header/components/ThemeChangeButton";
 import { chatApi } from "../api/api";
-import { AppContextType, LoadingContextType } from "../types/types";
+import { AppContextType } from "../types/types";
 import { bloodColor, darkColor, whiteColor } from "../style/Constants";
 
 const Login = () => {
@@ -12,10 +12,9 @@ const Login = () => {
     const [password, setPassword] = useState<string | number>("")
     const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false)
     const {appStates, setAppStates} = useContext<AppContextType>(AppContext)
-    const {setLoadingContext} = useContext<LoadingContextType>(LoadingContext)
 
     const authHandle = async () => {
-        setLoadingContext({loading: true})
+        setAppStates({...appStates, loadingState: true})
         try {
             const login = (await chatApi.Login({
                 phoneNumber: phone
@@ -24,27 +23,35 @@ const Login = () => {
             
             setAppStates({
                 ...appStates, 
-                isAuth: true, 
-                phone: phone, 
-                telegramID: login.telegramId, 
-                roleCode: login.roleCode
+                user: {
+                    isAuth: true, 
+                    phone: phone, 
+                    telegramID: login.telegramId, 
+                    roleCode: login.roleCode
+                },
+                loadingState: false
             }) 
 
             sessionStorage.setItem('isAuth', "true")
             sessionStorage.setItem('telegramId', login.telegramId)
             sessionStorage.setItem('phone', phone)
             sessionStorage.setItem('roleCode', login.roleCode)
-            
+
             setIsError(false)
         }
         catch(e) {
-            setIsError(true)
-            sessionStorage.setItem('isAuth', "false")
             console.log(e)
+            setIsError(true)
+            setAppStates({
+                ...appStates, 
+                user: {
+                    isAuth: false, 
+                    phone: "", 
+                    telegramID: "", 
+                    roleCode: ""
+                }
+            }) 
         }
-        finally {
-            setLoadingContext({loading: false})
-        }    
     }
     
     return <Container style={{
@@ -77,8 +84,8 @@ const Login = () => {
         </div>
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Отправить</Button>
         <div style={{position: "absolute", top: "1rem", right: "1rem"}}><ThemeChangeButton /></div>
-        <Paragraph theme={appStates.themeState} style={{ textAlign: "center"}}>
-            Не зарегистрированы? Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="https://t.me/VTBPlutosBot">Телеграмм Боте</a>
+        <Paragraph theme={appStates.themeState} style={{ textAlign: "center", marginTop:"5rem"}}>
+            Не зарегистрированы?(фатальная ошибка)<br />Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="https://t.me/VTBPlutosBot">Телеграмм Боте</a>
         </Paragraph>
     </Container>
 

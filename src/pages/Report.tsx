@@ -1,15 +1,14 @@
 import React, {useContext, useState} from "react";
-import {AppContext, LoadingContext} from "../context/context"
+import {AppContext} from "../context/context"
 import {Paragraph, Title, Container, Input, Button, TextArea, FileUploadLabel } from "../style/General"
-import ThemeChangeButton from "../components/header/components/ThemeChangeButton";
 import { chatApi } from "../api/api";
-import { AppContextType, LoadingContextType } from "../types/types";
-import { bloodColor, darkColor, whiteColor } from "../style/Constants";
+import { AppContextType } from "../types/types";
+import ModalEventStatus from "../components/modal/ModalEventStatus";
+import Ok from "../images/ok.png"
+import NotOk from "../images/not_ok.png"
 
 const Report = () => {
-
     let formData = new FormData()
-
     const [coordinates, setCoordinates] = useState({
         longitude: -1,
         latitude: -1
@@ -19,15 +18,14 @@ const Report = () => {
     const [image, setImage] = useState(null)
     const [message, setMessage] = useState<string>("")
     const {appStates, setAppStates} = useContext<AppContextType>(AppContext)
-    const {setLoadingContext} = useContext<LoadingContextType>(LoadingContext)
 
     const repHandle = async () => {
-        setLoadingContext({loading: true})
+        setAppStates({...appStates, loadingState: true})
         try {
-            console.log(message, appStates.telegramID)
+            console.log(message, appStates.user.telegramID)
             formData.append("file", image)
             const params = {
-                telegramId: appStates.telegramID,
+                telegramId: appStates.user.telegramID,
                 text: message,
                 longitude: coordinates.longitude,
                 latitude: coordinates.latitude
@@ -41,7 +39,7 @@ const Report = () => {
             setReportStatus(false)
         }
         finally {
-            setLoadingContext({loading: false})
+            setAppStates({...appStates, modalState: true, loadingState: false})
         }    
     }
     
@@ -55,7 +53,7 @@ const Report = () => {
         })
     } 
 
-    return <Container>
+    return <Container style={{minHeight: "100vh"}}>
         <Title theme={appStates.themeState}>Отчет</Title>
         <div style={{display: "flex", flexDirection: "column"}}>
             <Paragraph theme={appStates.themeState}>Введите текст сообщения: </Paragraph>
@@ -81,14 +79,21 @@ const Report = () => {
                 </Paragraph>}
             </div>
             <Button theme={appStates.themeState} type="submit" onClick={() => repHandle()}>Отправить</Button>
-            {reportStatus &&
-                <Paragraph theme={appStates.themeState} style={{marginTop: "2rem", textAlign: "center", color: "#3fc647"}}>Отчет отправлен</Paragraph>}
-            {isError &&
-                <Paragraph theme={appStates.themeState} style={{marginTop: "2rem", textAlign: "center", color: bloodColor}}>
-                    Произошла ошибка при отправке отчета 😔<br/>Может быть Вы не ввели текст сообщения.
-                </Paragraph>}
-
         </div>
+
+        {appStates.modalState &&
+            <ModalEventStatus message={
+                reportStatus
+                    ? <>
+                        <img src={Ok} alt="" />
+                        <Paragraph style={{marginTop: "2rem"}}>Ваш отчет отправлен</Paragraph>
+                    </>
+                    : <>
+                        <img src={NotOk} alt="" />
+                        <Paragraph style={{marginTop: "2rem"}}>Произошла ошибка при отправке отчета. <br />Возможно вы не ввели текст сообщения</Paragraph>
+                    </>
+            }/>   
+        }
     </Container>
 
 }

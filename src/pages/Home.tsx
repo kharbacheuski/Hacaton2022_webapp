@@ -1,13 +1,14 @@
 import React, {useContext} from "react";
 import {AppContext} from "../context/context"
 import {Paragraph, Title, Container} from "../style/General"
+import { AppContextType } from "../types/types";
 
 const Home = () => {
     
-    const {appStates} = useContext(AppContext)
+    const {appStates} = useContext<AppContextType>(AppContext)
 
     return <>
-        <Container>
+        <Container style={{minHeight: "100vh"}}>
             <Title theme={appStates.themeState}>Домашняя страница</Title>
             <Paragraph theme={appStates.themeState}>
                 На этом сайте вы можете узнать о текущих событиях, и заданиях
