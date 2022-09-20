@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://178.124.147.66"
+    baseURL: "http://178.124.147.66",
+    headers: {
+        "Access-Control-Allow-Origin":"*"
+    }
 });
 
 export const chatApi = {

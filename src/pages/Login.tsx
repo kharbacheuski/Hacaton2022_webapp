@@ -60,7 +60,7 @@ const Login = () => {
         </Paragraph>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <Input autoComplete="true" theme={appStates.themeState} placeholder="Номер телефона" type="text" style={{margin: "1rem 0 0.5rem"}} onChange={(e) => setPhone(e.target.value)} />
-            <div style={{display: "flex", flexDirection: "row", columnGap: "0.5rem", position: "relative"}}>           
+            {/* <div style={{display: "flex", flexDirection: "row", columnGap: "0.5rem", position: "relative"}}>           
                 <Input autoComplete="true" theme={appStates.themeState} placeholder="Пароль" type={isPasswordVisible?"password":"text"} onChange={(e) => setPassword(e.target.value)} />
                 <div style={{cursor: "pointer", position: "absolute", right: "0.5rem", top: "0.3rem" }} onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
                     <svg id="eye" className={`eye ${appStates.themeState}`} width="30px" height="30px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@ const Login = () => {
                         </g>
                     </svg>
                 </div>
-            </div>
+            </div> */}
             {isError && <Paragraph style={{color: bloodColor, textAlign: "center", marginTop: "1.5rem"}}>Номер или пароль введены неверно! Может быть вы не зарегистрированы</Paragraph>}
         </div>
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Отправить</Button>
