@@ -15,7 +15,7 @@ const ModalEventStatus = ({message}) => {
             <ModalInner theme={appStates.themeState}>
             <div className="cross" onClick={() => setAppStates({...appStates, modalState: false})}></div>
             {message}
-            <Button style={{backgroundColor: darkColor, color: whiteColor, borderRadius: "3rem"}} onClick={() => setAppStates({...appStates, modalState: false})}>Окей</Button>
+            <Button style={{backgroundColor: darkColor, color: whiteColor, borderRadius: "3rem", margin: "2rem auto 1rem"}} onClick={() => setAppStates({...appStates, modalState: false})}>Окей</Button>
             </ModalInner>
         </ModalContentWrapper>
     </>

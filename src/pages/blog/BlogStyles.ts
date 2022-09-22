@@ -43,7 +43,7 @@ export const SwiperStyles = createGlobalStyle`
 
 export const Description = styled.div`
     height: 8rem;
-    padding: 1rem 0;
+    padding: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@ export const Description = styled.div`
     border-bottom: 3px solid ${({theme}) => theme === "moon"?whiteColor:darkColor};
 
     @media screen and (max-width: ${breakpointLG}) {
-        height: 5rem;
+        height: auto;
     }
 `
 export const PostPreview = styled.div`
@@ -69,7 +69,7 @@ export const PostPreview = styled.div`
         height: calc(100% - 8rem);
 
         @media screen and (max-width: ${breakpointLG}) {
-            height: calc(100% - 5rem);
+            height: calc(100% - 5.8rem);
         }
     }
 `
