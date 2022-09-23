@@ -28,7 +28,7 @@ const Events = () => {
                 setAppStates({...appStates, loadingState: false})
             }
         })()
-    }, [eventStatus])
+    }, [])
 
     const takeEvent = async (eventId) => {
         setAppStates({...appStates, loadingState: true})
