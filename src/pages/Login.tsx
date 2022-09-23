@@ -82,7 +82,7 @@ const Login = () => {
         <Button theme={appStates.themeState} onClick={() => authHandle()}>Отправить</Button>
         <div style={{position: "absolute", top: "1rem", right: "1rem"}}><ThemeChangeButton /></div>
         <Paragraph theme={appStates.themeState} style={{ textAlign: "center", marginTop:"5rem"}}>
-            Не зарегистрированы?(фатальная ошибка)<br />Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="https://t.me/VTBPlutosBot">Телеграмм Боте</a>
+            Не зарегистрированы?(фатальная ошибка)<br />Зарегистрируйтесь в нашем <a style={{textDecoration: "underlined", color: appStates.themeState == "sun"?darkColor:whiteColor}} href="https://t.me/AgroEventBot">Телеграмм Боте</a>
         </Paragraph>
     </Container>
 
